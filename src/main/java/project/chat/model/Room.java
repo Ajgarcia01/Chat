@@ -1,5 +1,6 @@
 package project.chat.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,13 +18,10 @@ public class Room {
 	
 	
 	public Room() {
-		
-		super();
+		this.name="";
+		this.messages = new ArrayList<>();
+		this.users = new ArrayList<>();
 	}
-
-
-	
-
 
 	public Room(String name, List<Message> messages, List<User> users) {
 		super();
@@ -32,7 +30,12 @@ public class Room {
 		this.users = users;
 	}
 
-
+	public Room(String name) {
+		super();
+		this.name = name;
+		this.messages = new ArrayList<>();
+		this.users = new ArrayList<>();
+	}
 
 
 
@@ -49,25 +52,30 @@ public class Room {
 		this.messages = messages;
 	}
 
-
-
-
-
 	public List<User> getUsers() {
 		return users;
 	}
 
-
-
-
-
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
-
-
-
-
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean result=false;
+		if(obj!=null) {
+			if(obj==this) {
+				result=true;
+			}
+			else if(obj instanceof Room) {
+				Room r=(Room)obj;
+				if(r.getName()==this.name) {
+					result=true;
+				}
+			}
+		}
+		return result;
+	}
 
 	@Override
 	public String toString() {

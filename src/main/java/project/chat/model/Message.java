@@ -1,20 +1,31 @@
 package project.chat.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Message {
 	private User user;
-	private Date date;
+	private LocalDateTime date;
 	private String message;
 	private Room room;
 	
 	
 	public Message() {
+		this.user=new User();
+		this.date=LocalDateTime.now();
+		this.message="";
+		this.room=new Room();
+	}
+	
+	public Message(User user, String message, Room room) {
 		super();
+		this.user = user;
+		this.date = LocalDateTime.now();
+		this.message = message;
+		this.room = room;
 	}
 
-
-	public Message(User user, Date date, String message, Room room) {
+	public Message(User user, LocalDateTime date, String message, Room room) {
 		super();
 		this.user = user;
 		this.date = date;
@@ -28,7 +39,7 @@ public class Message {
 	}
 
 
-	public Date getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
@@ -43,11 +54,28 @@ public class Message {
 	}
 
 
+	
 	@Override
 	public String toString() {
 		return "Message [user=" + user + ", date=" + date + ", message=" + message + ", room=" + room + "]";
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		boolean result=false;
+		if(obj!=null) {
+			if(obj==this) {
+				result=true;
+			}
+			else if(obj instanceof Message) {
+				Message m=(Message)obj;
+				if(m.getMessage()==this.message) {
+					result=true;
+				}
+			}
+		}
+		return result;
+	}
 	
 	
 	
