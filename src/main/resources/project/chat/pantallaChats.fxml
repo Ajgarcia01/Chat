@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.chat.SecondaryController">
+   <children>
+      <ImageView fitHeight="726.0" fitWidth="1330.0" layoutX="-4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagenes/pantalla_chats.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="sala1" alignment="CENTER" layoutX="233.0" layoutY="201.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="112.0" prefWidth="154.0" text="SALA 1" textAlignment="CENTER" />
+      <Button fx:id="sala2" alignment="CENTER" layoutX="840.0" layoutY="201.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="112.0" prefWidth="154.0" text="SALA 2" textAlignment="CENTER" />
+      <Button fx:id="sala3" alignment="CENTER" layoutX="233.0" layoutY="508.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="112.0" prefWidth="154.0" text="SALA 3" textAlignment="CENTER" />
+      <Button fx:id="sala4" alignment="CENTER" layoutX="840.0" layoutY="508.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="112.0" prefWidth="154.0" text="SALA 4" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
