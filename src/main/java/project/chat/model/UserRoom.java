@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserRoom {
-<<<<<<< HEAD
 	
-	
-=======
 	private List<User> users;
 	private List<Room> rooms;
 	private static UserRoom singletoon;
@@ -23,5 +20,4 @@ public class UserRoom {
 		
 	}
 
->>>>>>> 4739e7e12770d9af413f743108a3f9e0631c5da1
 }
