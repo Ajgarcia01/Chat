@@ -29,20 +29,20 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/codemodel.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/dtd-parser.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/FastInfoset.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/istack-commons-runtime.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/istack-commons-tools.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/javax.activation-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/jaxb-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/jaxb-jxc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/jaxb-runtime.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/jaxb-xjc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/relaxng-datatype.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/rngom.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/stax-ex.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/txw2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JGL/Desktop/prueba_android/xsom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/codemodel.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/dtd-parser.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/FastInfoset.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/istack-commons-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/istack-commons-tools.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/javax.activation-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/jaxb-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/relaxng-datatype.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/rngom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/stax-ex.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/txw2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/xsom.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
