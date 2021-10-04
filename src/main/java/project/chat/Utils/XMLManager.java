@@ -36,10 +36,12 @@ public class XMLManager {
 		}
 	}
 	
+	/*
 	public static UserRoom unmarshal(File f) throws IOException {
 		
 		
 		
 		return null;
 	}
+	*/
 }

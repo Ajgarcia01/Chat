@@ -3,6 +3,13 @@ package project.chat.model;
 import java.util.Arrays;
 import java.util.List;
 
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="room")
 public class Room {
 	private String name;
 	private List<Message> messages;
