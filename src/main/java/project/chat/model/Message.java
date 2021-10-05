@@ -5,24 +5,28 @@ import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="message")
+@XmlRootElement(name="messages")
 
 public class Message {
+	
 	private User user;
-	private LocalDateTime date;
 	private String message;
+	
+	private static LocalDateTime date;
+	;
 	//¿Es necesario?
-	private Room room;
+	//private Room room;
 	
 	
 	public Message() {
 		this.user=new User();
-		this.date=LocalDateTime.now();
 		this.message="";
-		this.room=new Room();
+		this.date=LocalDateTime.now();
+		
 	}
 	
 	public Message(User user, String message, Room room) {
@@ -30,15 +34,15 @@ public class Message {
 		this.user = user;
 		this.date = LocalDateTime.now();
 		this.message = message;
-		this.room = room;
+		
 	}
 
 	public Message(User user, LocalDateTime date, String message, Room room) {
 		super();
 		this.user = user;
-		this.date = date;
+		this.date = LocalDateTime.now();
 		this.message = message;
-		this.room = room;
+	
 	}
 
 
@@ -54,11 +58,6 @@ public class Message {
 
 	public String getMessage() {
 		return message;
-	}
-
-
-	public Room getRoom() {
-		return room;
 	}
 
 

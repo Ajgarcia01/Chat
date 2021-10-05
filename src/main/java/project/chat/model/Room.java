@@ -7,20 +7,24 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name="room")
 public class Room {
 	protected String name;
+	
 	protected List<Message> messages;
+	@XmlTransient
 	protected List<User>users;
 	
 	
 	public Room() {
 		this.name="";
 		this.messages = new ArrayList<>();
-		this.users = new ArrayList<>();
+		//this.users = new ArrayList<>();
 	}
 
 	public Room(String name, List<Message> messages, List<User> users) {
@@ -52,6 +56,7 @@ public class Room {
 		this.messages = messages;
 	}
 
+	
 	public List<User> getUsers() {
 		return users;
 	}
@@ -59,6 +64,7 @@ public class Room {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
+	
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -79,9 +85,9 @@ public class Room {
 
 	@Override
 	public String toString() {
-		return "Room [name=" + name + ", users=" + users.toString() + ", messages=" + messages.toString() + "]";
+		return "Room [name=" + name + ", users=" + ", messages=" + messages.toString() + "]";
 	}
 
-	
+	//+ users.toString() 
  
 }
