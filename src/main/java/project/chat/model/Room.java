@@ -12,9 +12,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name="room")
 public class Room {
-	private String name;
-	private List<Message> messages;
-	private List<User>users;
+	protected String name;
+	protected List<Message> messages;
+	protected List<User>users;
 	
 	
 	public Room() {
@@ -80,16 +80,6 @@ public class Room {
 	@Override
 	public String toString() {
 		return "Room [name=" + name + ", messages=" + messages + ", users=" + users + "]";
-	}
-
-
-
-
-
-	
-	
-	
-	
-	
+	}	
  
 }

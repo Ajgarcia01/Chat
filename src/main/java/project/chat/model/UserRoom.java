@@ -12,11 +12,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 public class UserRoom {
 	
-	private List<User> users;
-	private List<Room> rooms;
+	protected List<User> users;
+	protected List<Room> rooms;
 	private static UserRoom singletoon;
 	
-	private UserRoom() {
+	protected UserRoom() {
 		users=new ArrayList<>();
 		rooms=new ArrayList<>();
 	}

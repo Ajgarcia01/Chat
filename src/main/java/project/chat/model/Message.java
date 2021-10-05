@@ -7,6 +7,7 @@ public class Message {
 	private User user;
 	private LocalDateTime date;
 	private String message;
+	//¿Es necesario?
 	private Room room;
 	
 	
