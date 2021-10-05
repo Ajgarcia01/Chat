@@ -8,9 +8,9 @@ public class Lauch {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
+
 		System.out.println("Hola");
-=======
+
 		
 		User u=new User("antio");
 		User u2=new User("Pepito");
@@ -27,10 +27,10 @@ public class Lauch {
 		r.addUser(u4);
 		r.addMessages(m);
 		r.addMessages(m2);
-		System.out.println(r.toString());
+		System.out.println(r);
 		
 		System.out.println("hola");
->>>>>>> 4ec6026e98c241a30d1c5742dca657b4b615b653
+
 	}
 
 }
