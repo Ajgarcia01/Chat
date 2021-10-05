@@ -25,7 +25,6 @@ public class PrimaryController {
 	
 	@FXML
     private void setName() throws IOException {
-		
 			String usuario= nickname.getText();
 			System.out.println(usuario);
 
