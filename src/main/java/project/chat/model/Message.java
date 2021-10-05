@@ -3,6 +3,13 @@ package project.chat.model;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="message")
+
 public class Message {
 	private User user;
 	private LocalDateTime date;
