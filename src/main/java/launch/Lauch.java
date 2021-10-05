@@ -10,6 +10,9 @@ public class Lauch {
 		// TODO Auto-generated method stub
 		
 		User u=new User("antio");
+		System.out.println(u.toString());
+		
+		
 		User u2=new User("Pepito");
 		User u3=new User("Atahualpa");
 		User u4=new User("Chinco");

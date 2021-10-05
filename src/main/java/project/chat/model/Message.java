@@ -65,7 +65,7 @@ public class Message {
 	
 	@Override
 	public String toString() {
-		return "Message [user=" + user + ", date=" + date + ", message=" + message + ", room=" + room + "]";
+		return "Message [user=" + user + ", date=" + date + ", message=" + message + "]";
 	}
 	
 	@Override
