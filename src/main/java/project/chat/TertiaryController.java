@@ -1,13 +1,17 @@
 package project.chat;
 
 import java.io.IOException;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+
+import javafx.stage.Stage;
 
 public class TertiaryController {
 	@FXML
-	private TextField exitbutton;
+	private Button exitbutton;
 	
 	
 	@FXML
@@ -15,11 +19,13 @@ public class TertiaryController {
 	
 	@FXML
 	private TextField messages;
-	
+
 	
 	@FXML
-	public void exit() throws IOException {
-		App.setRoot("PantallaUser");
+	private void exit(ActionEvent event) throws IOException {
+	    Node source = (Node) event.getSource();
+	    Stage stage = (Stage) source.getScene().getWindow();
+	    stage.close();
 	}
 	
 }

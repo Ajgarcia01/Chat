@@ -2,7 +2,12 @@ package project.chat;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import project.chat.model.Room;
 
 public class SecondaryController {
@@ -22,8 +27,6 @@ public class SecondaryController {
 	
 	@FXML
     private void setRoom() throws IOException {
-        App.setRoot("pantallaChat");
-        int nsala=0;
        Room r1 =new Room("Sala 1");
        Room r2 =new Room("Sala 2");
        Room r3 =new Room("Sala 3");
@@ -31,10 +34,12 @@ public class SecondaryController {
     
         	
         	if(sala1.isFocused()) {
+        		modalChat();
         	System.out.println(r1.getName());
         		
         	}
         	if(sala2.isFocused()) {
+        		
         	System.out.println(r2.getName());	
         	}
         	if(sala3.isFocused()) {
@@ -44,4 +49,24 @@ public class SecondaryController {
             	System.out.println(r4.getName());	
             	}	
         }
+	
+	@FXML
+    public void modalChat() throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("pantallaChat.fxml"));
+		Parent modal;
+		try {
+			modal = fxmlLoader.load();
+			Stage modalStage = new Stage();
+			modalStage.initModality(Modality.APPLICATION_MODAL);
+			modalStage.initOwner(App.rootstage);
+			modalStage.setResizable(false);
+			Scene modalScene = new Scene(modal);
+			modalStage.setScene(modalScene);
+			modalStage.showAndWait();
+			modalStage.setResizable(false);
+
+		} catch (IOException ex) {
+		}
+        
+    }
  }
