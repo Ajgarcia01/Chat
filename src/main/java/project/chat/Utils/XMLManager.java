@@ -6,10 +6,12 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.jar.JarException;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
 import project.chat.model.UserRoom;
 
@@ -36,14 +38,25 @@ public class XMLManager {
 		}
 	}
 	
-	/*
+	
 	public static UserRoom unmarshal(File f) throws IOException {
 		
+		try {
+			JAXBContext jc = JAXBContext.newInstance(UserRoom.class);
+			Unmarshaller u = jc.createUnmarshaller();
+			//u.setProperty(jc.JAXB_CONTEXT_FACTORY, true);
+			UserRoom ur = (UserRoom) u.unmarshal(f);
+			System.out.println(ur);
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
 		
 		
 		return null;
 	}
-	*/
+	
 	
 	/*
 	try {

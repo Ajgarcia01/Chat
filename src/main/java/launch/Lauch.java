@@ -2,6 +2,7 @@ package launch;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.StringReader;
 
 import javax.xml.bind.JAXBException;
 
@@ -24,22 +25,43 @@ public class Lauch {
 		
 		User u=new User("Jeft11");
 		User u2=new User("Manolo72");
-		RoomDAO r=new RoomDAO("Sala1");
-		Message m=new Message(u,"me cago en tus muelas",r);
-		Message m1=new Message(u,"k haceh tio",r);
-		Message m2=new Message(u2,"me cago ",r);
-		r.addUser(u);
-		r.addUser(u2);
-		r.addMessages(m);
-		r.addMessages(m1);
-		r.addMessages(m2);
-		System.out.println(r);
-		UserRoom r1=new UserRoom();
-		r1.addRoom(r);
+		User u1=new User("Marronero69");
+		RoomDAO r1=new RoomDAO("Sala1");
+		RoomDAO r2=new RoomDAO("Sala2");
+		Message m=new Message(u,"me cago en tus muelas",r1);
+		Message m2=new Message(u2,"me cago ",r2);
+		Message m3=new Message(u1,"Hola buenos dias a todos ",r2);
+		
+		
+		r2.addUser(u2);
+		r2.addUser(u1);
+		r2.addMessages(m2);
+		r2.addMessages(m3);
 		r1.addUser(u);
-		r1.addUser(u2);
+		r1.addMessages(m);
+		//System.out.println(r1);
+		
+		UserRoom ur=new UserRoom();
+		ur.addRoom(r1);
+		ur.addRoom(r2);
+		ur.addUser(u2);
+		ur.addUser(u);
+		ur.addUser(u1);
+		
+		
+		
+		File f = new File("chat.xml");
 		try {
-			XMLManager.marshal(r1, new File("chat.xml"));
+			XMLManager.unmarshal(f);
+			
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		try {
+			XMLManager.marshal(ur, new File("chat.xml"));
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -1,23 +1,28 @@
 package project.chat.model;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
+
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="messages")
 
+@XmlRootElement(name="hola")
+@XmlAccessorType(XmlAccessType.NONE)
 public class Message {
 	
+	Instant instant;
+	@XmlElement(name="user")
 	private User user;
+	@XmlElement(name="message")
 	private String message;
-	
-	private static LocalDateTime date;
-	;
+	@XmlAttribute(name="date")
+	private static Date d = new Date();
 	//¿Es necesario?
 	//private Room room;
 	
@@ -25,22 +30,21 @@ public class Message {
 	public Message() {
 		this.user=new User();
 		this.message="";
-		this.date=LocalDateTime.now();
+		this.d=new Date();
 		
 	}
 	
 	public Message(User user, String message, Room room) {
 		super();
 		this.user = user;
-		this.date = LocalDateTime.now();
 		this.message = message;
 		
 	}
 
-	public Message(User user, LocalDateTime date, String message, Room room) {
+	public Message(User user, Date d, String message, Room room) {
 		super();
 		this.user = user;
-		this.date = LocalDateTime.now();
+		this.d=new Date();
 		this.message = message;
 	
 	}
@@ -51,8 +55,8 @@ public class Message {
 	}
 
 
-	public LocalDateTime getDate() {
-		return date;
+	public Date getDate() {
+		return d;
 	}
 
 
@@ -64,7 +68,7 @@ public class Message {
 	
 	@Override
 	public String toString() {
-		return "Message [user=" + user + ", date=" + date + ", message=" + message + "]";
+		return "Message [user=" + user + ", date=" + d + ", message=" + message + "]";
 	}
 	
 	@Override

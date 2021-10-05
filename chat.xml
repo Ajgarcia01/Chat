@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<CHAT>
+    <usersOnline>
+        <users>
+            <name>Manolo72</name>
+        </users>
+        <users>
+            <name>Jeft11</name>
+        </users>
+        <users>
+            <name>Marronero69</name>
+        </users>
+    </usersOnline>
+    <Rooms>
+        <room name="Sala1">
+            <messages date="2021-10-05T21:16:00.128+02:00">
+                <user>
+                    <name>Jeft11</name>
+                </user>
+                <message>me cago en tus muelas</message>
+            </messages>
+        </room>
+        <room name="Sala2">
+            <messages date="2021-10-05T21:16:00.128+02:00">
+                <user>
+                    <name>Manolo72</name>
+                </user>
+                <message>me cago </message>
+            </messages>
+            <messages date="2021-10-05T21:16:00.128+02:00">
+                <user>
+                    <name>Marronero69</name>
+                </user>
+                <message>Hola buenos dias a todos </message>
+            </messages>
+        </room>
+    </Rooms>
+</CHAT>
