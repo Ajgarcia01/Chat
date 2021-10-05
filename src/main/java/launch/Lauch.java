@@ -17,16 +17,19 @@ public class Lauch {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Hola");
-
-		
-		
-		//System.out.println(u.toString());
-		
 		User u=new User("Jeft11");
-		User u2=new User("Manolo72");
 		RoomDAO r=new RoomDAO("Sala1");
 		Message m=new Message(u,"me cago en tus muelas",r);
 		Message m1=new Message(u,"k haceh tio",r);
+		System.out.println(m.getMessage().compareTo(m1.getMessage()));
+		
+		
+		//System.out.println(u.toString());
+		/*
+		
+		User u2=new User("Manolo72");
+		
+		
 		Message m2=new Message(u2,"me cago ",r);
 		r.addUser(u);
 		r.addUser(u2);
@@ -47,7 +50,7 @@ public class Lauch {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		*/
 		System.out.println("Hecho");
 
 	}
