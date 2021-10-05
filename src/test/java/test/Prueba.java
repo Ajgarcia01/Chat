@@ -1,16 +1,17 @@
 package test;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
 
 import project.chat.controller.RoomDAO;
 import project.chat.model.Message;
-import project.chat.model.Room;
 import project.chat.model.User;
 
-class TestPrueba {
+public class Prueba {
 
 	@Test
-	void test() {
+	public void test() {
 		User u1=new User("Juan");
 		User u2=new User("Antonio");
 		User u3=new User("Pedro");
@@ -25,7 +26,6 @@ class TestPrueba {
 		r.addMessages(m2);
 		r.addMessages(m3);
 		System.out.println(r.getMessages());
-		
 	}
 
 }
