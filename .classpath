@@ -34,20 +34,20 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/codemodel.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/dtd-parser.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/FastInfoset.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/istack-commons-runtime.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/istack-commons-tools.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/javax.activation-api.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/jaxb-api.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/jaxb-jxc.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/jaxb-runtime.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/jaxb-xjc.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/relaxng-datatype.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/rngom.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/stax-ex.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/txw2.jar"/>
-	<classpathentry kind="lib" path="C:/Trabajos/Chat/target/classes/libraries/xsom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/codemodel.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/dtd-parser.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/FastInfoset.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/istack-commons-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/istack-commons-tools.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/javax.activation-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/jaxb-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/relaxng-datatype.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/rngom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/stax-ex.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/txw2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JGL/git/chat/src/main/resources/libraries/xsom.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

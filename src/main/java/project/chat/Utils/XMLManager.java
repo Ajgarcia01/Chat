@@ -44,4 +44,13 @@ public class XMLManager {
 		return null;
 	}
 	*/
+	
+	/*
+	try {
+		JAXBManager.marshal(lista, new File("ejemplo.xml"));
+	} catch (JAXBException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	*/
 }
