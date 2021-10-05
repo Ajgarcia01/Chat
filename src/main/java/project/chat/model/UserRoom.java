@@ -30,5 +30,26 @@ public class UserRoom {
 		return singletoon;
 		
 	}
+	
+	public boolean addUser(User user) {
+		boolean result=false;
+			if(user!=null&&!user.getName().equals("")) {
+				if(!this.users.contains(user)) {
+					this.users.add(user);
+					result=true;
+				}
+			}
+		return result;
+	}
+	public boolean addRoom(Room room) {
+		boolean result=false;
+			if(room!=null&&!room.getName().equals("")) {
+				if(!this.rooms.contains(room)) {
+					this.rooms.add(room);
+					result=true;
+				}
+			}
+		return result;
+	}
 
 }
