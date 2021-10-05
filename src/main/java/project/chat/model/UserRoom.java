@@ -42,6 +42,18 @@ public class UserRoom {
 			}
 		return result;
 	}
+	
+	public boolean removeUser(User user) {
+		boolean result = false;
+		if (user != null) {
+			if (this.users.size() > 0 && this.users.contains(user)) {
+				this.users.remove(user);
+				result = true;
+			}
+		}
+		return result;
+	}
+	
 	public boolean addRoom(Room room) {
 		boolean result=false;
 			if(room!=null&&!room.getName().equals("")) {
@@ -52,5 +64,14 @@ public class UserRoom {
 			}
 		return result;
 	}
-
+	public boolean removeRoom(Room room) {
+		boolean result = false;
+		if (room != null) {
+			if (this.rooms.size() > 0 && this.users.contains(room)) {
+				this.rooms.remove(room);
+				result = true;
+			}
+		}
+		return result;
+	}
 }
