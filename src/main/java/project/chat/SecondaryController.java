@@ -1,17 +1,23 @@
 package project.chat;
 
 import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.chat.model.Room;
 
 public class SecondaryController {
 
+	@FXML
+	private Button out;
 	@FXML
 	private Button sala1;
 	
@@ -69,4 +75,11 @@ public class SecondaryController {
 		}
         
     }
+	
+	@FXML
+	private void exit(ActionEvent event) throws IOException {
+	    Node source = (Node) event.getSource();
+	    Stage stage = (Stage) source.getScene().getWindow();
+	    stage.close();
+	}
  }

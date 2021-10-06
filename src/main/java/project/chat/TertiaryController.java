@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class TertiaryController {
 	@FXML
-	private Button exitbutton;
+	private Button out;
 	
 	
 	@FXML

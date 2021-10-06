@@ -9,13 +9,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="UserRoom")
+@XmlRootElement(name="CHAT")
 
 public class UserRoom {
+	@XmlElementWrapper(name="usersOnline")
+	//@XmlElement(name="user")
 	protected List<User> users;
-
+	@XmlElementWrapper(name="Rooms")
+	@XmlElement(name="room")
 	protected List<Room> rooms;
 	private static UserRoom singletoon;
 	
@@ -74,4 +78,10 @@ public class UserRoom {
 		}
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return "UserRoom [users=" + users + ", rooms=" + rooms + "]";
+	}
+	
 }

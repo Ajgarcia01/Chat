@@ -15,20 +15,22 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-	public static Window rootstage;
+	public static Stage rootstage;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("pantallaUser"), 1280, 720);
+        scene = new Scene(loadFXML("pantallaUser"), 748, 421);
+        stage.setResizable(false);
+        stage.centerOnScreen();
         stage.setScene(scene);
         stage.show();
     }
-
+   
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
-    private static Parent loadFXML(String fxml) throws IOException {
+    protected static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
