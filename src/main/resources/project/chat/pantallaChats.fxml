@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.chat.SecondaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.chat.SecondaryController">
    <children>
-      <ImageView fitHeight="726.0" fitWidth="1330.0" layoutX="-4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="428.0" fitWidth="852.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Imagenes/pantalla_chats.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="sala1" alignment="CENTER" layoutX="233.0" layoutY="201.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="112.0" prefWidth="154.0" text="SALA 1" textAlignment="CENTER" />
-      <Button fx:id="sala2" alignment="CENTER" layoutX="840.0" layoutY="201.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="112.0" prefWidth="154.0" text="SALA 2" textAlignment="CENTER" />
-      <Button fx:id="sala3" alignment="CENTER" layoutX="233.0" layoutY="508.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="112.0" prefWidth="154.0" text="SALA 3" textAlignment="CENTER" />
-      <Button fx:id="sala4" alignment="CENTER" layoutX="840.0" layoutY="508.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="112.0" prefWidth="154.0" text="SALA 4" textAlignment="CENTER" />
+      <Button fx:id="sala1" alignment="CENTER" layoutX="128.0" layoutY="117.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="76.0" prefWidth="105.0" text="SALA 1" textAlignment="CENTER" />
+      <Button fx:id="sala2" alignment="CENTER" layoutX="489.0" layoutY="117.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="76.0" prefWidth="105.0" text="SALA 2" textAlignment="CENTER" />
+      <Button fx:id="sala3" alignment="CENTER" layoutX="128.0" layoutY="302.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="76.0" prefWidth="105.0" text="SALA 3" textAlignment="CENTER" />
+      <Button fx:id="sala4" alignment="CENTER" layoutX="489.0" layoutY="302.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="76.0" prefWidth="105.0" text="SALA 4" textAlignment="CENTER" />
+      <Button fx:id="out" layoutX="677.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+         <font>
+            <Font name="Franklin Gothic Heavy Italic" size="10.0" />
+         </font>
+      </Button>
+      <ImageView disable="true" fitHeight="40.0" fitWidth="44.0" layoutX="683.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagenes/339-3396821_png-file-svg-download-icon-logout-transparent-png-removebg-preview.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
