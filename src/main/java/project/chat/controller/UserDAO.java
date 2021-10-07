@@ -5,7 +5,7 @@ import project.chat.model.User;
 public class UserDAO extends User{
 	private static UserDAO _Instance;
 
-	private UserDAO() {
+	public UserDAO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

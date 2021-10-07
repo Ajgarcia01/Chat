@@ -36,8 +36,11 @@ public class PrimaryController {
 	
 	 protected static Parent loadFXML(String fxml) throws IOException {
 	        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+	        
+	        
 	        return fxmlLoader.load();
-	    }
+	    
+	 }
 	
 	@FXML
     private void setName() throws IOException, JAXBException {

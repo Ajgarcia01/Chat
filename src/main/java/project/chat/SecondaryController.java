@@ -38,37 +38,51 @@ public class SecondaryController {
 	
 	UserRoom ur=new UserRoom();
 	@FXML
-    private void setRoom() throws IOException, JAXBException {
-       RoomDAO r1 =new RoomDAO("Sala 1");
+    private void setRoom() throws IOException, JAXBException, ClassNotFoundException {
+       XMLManager.loadRooms("chat.xml");
+	   RoomDAO  r1 =new  RoomDAO ("Sala 1");
        RoomDAO  r2 =new  RoomDAO ("Sala 2");
        RoomDAO  r3 =new  RoomDAO ("Sala 3");
        RoomDAO  r4 =new  RoomDAO ("Sala 4");
     
         	
         	if(sala1.isFocused()) {
-        		modalChat();
-        		ur.addRoom(r1);
-        		XMLManager.marshal(ur, new File("chat.xml"));
-        	System.out.println(r1.getName());
+        		 XMLManager.loadRooms("chat.xml");
+        		 System.out.println("1");
+        		 ur.addRoom(r1);
+        		 System.out.println("añadida");
+        		 XMLManager.marshal(ur, new File("chat.xml"));
+        		 System.out.println(r1.getName());	
+        		 modalChat();
         		
         	}
         	if(sala2.isFocused()) {
-        		modalChat();
-        		ur.addRoom(r2);
-        		XMLManager.marshal(ur, new File("chat.xml"));
-        	System.out.println(r2.getName());	
+        		 XMLManager.loadRooms("chat.xml");
+        		 System.out.println("1");
+        		 ur.addRoom(r2);
+        		 System.out.println("añadida");
+        		 XMLManager.marshal(ur, new File("chat.xml"));
+        		 System.out.println(r2.getName());	
+        		 modalChat();
         	}
         	if(sala3.isFocused()) {
-        		modalChat();
-        		ur.addRoom(r3);
-        		XMLManager.marshal(ur, new File("chat.xml"));
-            	System.out.println(r3.getName());	
+        		 XMLManager.loadRooms("chat.xml");
+        		 System.out.println("1");
+        		 ur.addRoom(r3);
+        		 System.out.println("añadida");
+        		 XMLManager.marshal(ur, new File("chat.xml"));
+        		 System.out.println(r3.getName());	
+        		 modalChat();
             	}	
         	if(sala4.isFocused()) {
-        		modalChat();
-        		ur.addRoom(r4);
-        		XMLManager.marshal(ur, new File("chat.xml"));
-            	System.out.println(r4.getName());	
+        		 XMLManager.loadRooms("chat.xml");
+        		 System.out.println("1");
+        		 ur.addRoom(r4);
+        		 System.out.println("añadida");
+        		 XMLManager.marshal(ur, new File("chat.xml"));
+        		 System.out.println(r4.getName());	
+        		 modalChat();
+        		 
             	}
         	
         }

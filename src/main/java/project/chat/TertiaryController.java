@@ -21,7 +21,7 @@ import javafx.scene.control.TextFormatter;
 import javafx.stage.Stage;
 import project.chat.Utils.XMLManager;
 import project.chat.controller.RoomDAO;
-import project.chat.controller.UserRoomDAO;
+import project.chat.controller.UserDAO;
 import project.chat.model.Message;
 import project.chat.model.Room;
 import project.chat.model.User;
@@ -72,6 +72,9 @@ public class TertiaryController {
 	
 	@FXML
 	private void writeMessage() throws IOException, JAXBException {
+		UserDAO u1=new UserDAO();
+		u1.getInstance();
+		
 		
 	   
 	}
