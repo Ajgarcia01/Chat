@@ -40,20 +40,6 @@ public class XMLManager {
 		}
 	}
 	
-	/*
-	public static  unmarshal(String f) throws IOException, JAXBException {
-		UserRoom ur=new UserRoom();
-		try {
-			JAXBContext jc = JAXBContext.newInstance(UserRoom.class);
-			Unmarshaller u = jc.createUnmarshaller();
-			 ur = (UserRoom) u.unmarshal(new File(f));
-		} catch (JAXBException e) {
-			e.printStackTrace();
-		}
-		//System.out.println(ur);
-		return ur;
-	}
-	*/
 	
 	public static List<Room> loadRooms(String f) throws ClassNotFoundException {
 		
