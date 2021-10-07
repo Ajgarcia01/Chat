@@ -11,10 +11,10 @@ import project.chat.model.UserRoom;
 public class UserRoomDAO extends UserRoom{
 	private static UserRoom _Instance;
 	
-	public static UserRoom getInstance(File f) {
+	public static UserRoom getInstance(File f) throws JAXBException {
 		if(f!=null) {
 			try {
-				_Instance= XMLManager.unmarshal(f);
+				_Instance= XMLManager.unmarshal("chat.xml");
 				
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block

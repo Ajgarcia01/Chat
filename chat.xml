@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <CHAT>
-    <usersOnline/>
+    <usersOnline>
+        <user name="Manolo72"/>
+        <user name="Jeft11"/>
+        <user name="Marronero69"/>
+    </usersOnline>
     <Rooms>
-        <room name="Sala 1">
-            <messages/>
+        <room name="Sala1">
+            <messages>
+                <message date="2021-10-07T11:15:28.678+02:00">
+                    <user name="Jeft11"/>
+                    <content>me cago en tus muelas</content>
+                </message>
+            </messages>
+        </room>
+        <room name="Sala2">
+            <messages>
+                <message date="2021-10-07T11:15:28.678+02:00">
+                    <user name="Manolo72"/>
+                    <content>me cago </content>
+                </message>
+                <message date="2021-10-07T11:15:28.678+02:00">
+                    <user name="Marronero69"/>
+                    <content>Hola buenos dias a todos</content>
+                </message>
+            </messages>
         </room>
     </Rooms>
 </CHAT>

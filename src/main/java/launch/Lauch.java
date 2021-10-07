@@ -14,7 +14,7 @@ import project.chat.model.UserRoom;
 
 public class Lauch {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws JAXBException {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Hola");
@@ -50,24 +50,23 @@ public class Lauch {
 		
 		
 		
-		File f = new File("chat.xml");
 		try {
-			XMLManager.unmarshal(f);
-			
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		
-		try {
-			XMLManager.marshal(ur, new File("chat.xml"));
+			XMLManager.marshal(ur, new File("C:\\Users\\JGL\\git\\chat\\chat.xml"));
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		
+		File f = new File("C:\\Users\\JGL\\git\\chat\\chat.xml");
+		try {
+			XMLManager.unmarshal("C:\\Users\\JGL\\git\\chat\\chat.xml");
+			
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		
 		System.out.println("Hecho");

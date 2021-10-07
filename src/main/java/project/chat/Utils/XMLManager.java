@@ -39,22 +39,17 @@ public class XMLManager {
 	}
 	
 	
-	public static UserRoom unmarshal(File f) throws IOException {
-		
+	public static UserRoom unmarshal(String f) throws IOException, JAXBException {
+		UserRoom ur=new UserRoom();
 		try {
 			JAXBContext jc = JAXBContext.newInstance(UserRoom.class);
 			Unmarshaller u = jc.createUnmarshaller();
-			//u.setProperty(jc.JAXB_CONTEXT_FACTORY, true);
-			UserRoom ur = (UserRoom) u.unmarshal(f);
-			System.out.println(ur);
+			 ur = (UserRoom) u.unmarshal(new File(f));
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    
-		
-		
-		return null;
+		//System.out.println(ur);
+		return ur;
 	}
 
 }
