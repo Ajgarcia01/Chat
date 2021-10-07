@@ -22,7 +22,7 @@ public class Message {
 	@XmlElement(name="content")
 	private String message;
 	@XmlAttribute(name="date")
-	private static Date d = new Date();
+	private Date d = new Date();
 	//¿Es necesario?
 	//private Room room;
 	
