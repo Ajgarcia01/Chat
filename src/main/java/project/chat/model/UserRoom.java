@@ -107,6 +107,18 @@ public class UserRoom {
 		}
 		return result;
 	}
+	public User searchUser(String name) {
+		User result=new User();
+		if(name!=null&&!name.equals("")) {
+			for (int i = 0; i < users.size(); i++) {
+				if (users.get(i).getName().equals(name)) {
+					result = users.get(i);
+					i = users.size();
+				}
+			}
+		}
+		return result;
+	}
 	
 	
 	
