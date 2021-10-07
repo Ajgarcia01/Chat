@@ -6,13 +6,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringReader;
-import java.util.jar.JarException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import project.chat.model.Room;
 import project.chat.model.UserRoom;
 
 public class XMLManager {
@@ -38,8 +40,8 @@ public class XMLManager {
 		}
 	}
 	
-	
-	public static UserRoom unmarshal(String f) throws IOException, JAXBException {
+	/*
+	public static  unmarshal(String f) throws IOException, JAXBException {
 		UserRoom ur=new UserRoom();
 		try {
 			JAXBContext jc = JAXBContext.newInstance(UserRoom.class);
@@ -51,5 +53,24 @@ public class XMLManager {
 		//System.out.println(ur);
 		return ur;
 	}
+	*/
+	
+	public static List<Room> loadRooms(String f) throws ClassNotFoundException {
+		
+		List<Room> result=new ArrayList();
+		UserRoom ur=new UserRoom();
+		try {
+			JAXBContext jc = JAXBContext.newInstance(UserRoom.class);
+			Unmarshaller u = jc.createUnmarshaller();
+			 ur = (UserRoom) u.unmarshal(new File(f));
+			 result.addAll(ur.getRooms());
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+		return result;
+
+	}
+
+	
 
 }

@@ -36,6 +36,22 @@ public class UserRoom {
 		
 	}
 	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+	public List<Room> getRooms() {
+		return rooms;
+	}
+
+	public void setRooms(List<Room> rooms) {
+		this.rooms = rooms;
+	}
+
 	public boolean addUser(User user) {
 		boolean result=false;
 			if(user!=null&&!user.getName().equals("")) {
@@ -78,6 +94,9 @@ public class UserRoom {
 		}
 		return result;
 	}
+	
+	
+	
 
 	@Override
 	public String toString() {

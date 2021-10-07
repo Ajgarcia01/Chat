@@ -11,6 +11,7 @@ import project.chat.model.UserRoom;
 public class UserRoomDAO extends UserRoom{
 	private static UserRoom _Instance;
 	
+	/*
 	public static UserRoom getInstance(File f) throws JAXBException {
 		if(f!=null) {
 			try {
@@ -35,5 +36,5 @@ public class UserRoomDAO extends UserRoom{
 		
 		return _Instance;
 	}
-
+	 	*/
 }

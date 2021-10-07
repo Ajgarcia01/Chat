@@ -14,9 +14,9 @@ import project.chat.model.UserRoom;
 
 public class Lauch {
 
-	public static void main(String[] args) throws JAXBException {
+	public static void main(String[] args) throws JAXBException, ClassNotFoundException, IOException {
 		// TODO Auto-generated method stub
-		
+		/*
 		System.out.println("Hola");
 
 		
@@ -70,7 +70,11 @@ public class Lauch {
 		}
 		
 		System.out.println("Hecho");
-
+		 	*/
+		
+		UserRoom ur=new UserRoom();
+		ur.setRooms(XMLManager.loadRooms("chat.xml"));
+		System.out.println(ur);
 	}
 
 }
