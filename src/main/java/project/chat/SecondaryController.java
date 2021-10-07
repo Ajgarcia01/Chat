@@ -1,6 +1,9 @@
 package project.chat;
 
+import java.io.File;
 import java.io.IOException;
+
+import javax.xml.bind.JAXBException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +15,10 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import project.chat.Utils.XMLManager;
+import project.chat.controller.RoomDAO;
 import project.chat.model.Room;
+import project.chat.model.UserRoom;
 
 public class SecondaryController {
 
@@ -30,30 +36,41 @@ public class SecondaryController {
 	private Button sala4;
 	
 	
-	
+	UserRoom ur=new UserRoom();
 	@FXML
-    private void setRoom() throws IOException {
-       Room r1 =new Room("Sala 1");
-       Room r2 =new Room("Sala 2");
-       Room r3 =new Room("Sala 3");
-       Room r4 =new Room("Sala 4");
+    private void setRoom() throws IOException, JAXBException {
+       RoomDAO r1 =new RoomDAO("Sala 1");
+       RoomDAO  r2 =new  RoomDAO ("Sala 2");
+       RoomDAO  r3 =new  RoomDAO ("Sala 3");
+       RoomDAO  r4 =new  RoomDAO ("Sala 4");
     
         	
         	if(sala1.isFocused()) {
         		modalChat();
+        		ur.addRoom(r1);
+        		XMLManager.marshal(ur, new File("chat.xml"));
         	System.out.println(r1.getName());
         		
         	}
         	if(sala2.isFocused()) {
-        		
+        		modalChat();
+        		ur.addRoom(r2);
+        		XMLManager.marshal(ur, new File("chat.xml"));
         	System.out.println(r2.getName());	
         	}
         	if(sala3.isFocused()) {
+        		modalChat();
+        		ur.addRoom(r3);
+        		XMLManager.marshal(ur, new File("chat.xml"));
             	System.out.println(r3.getName());	
             	}	
         	if(sala4.isFocused()) {
+        		modalChat();
+        		ur.addRoom(r4);
+        		XMLManager.marshal(ur, new File("chat.xml"));
             	System.out.println(r4.getName());	
-            	}	
+            	}
+        	
         }
 	
 	@FXML
@@ -63,7 +80,7 @@ public class SecondaryController {
 		try {
 			modal = fxmlLoader.load();
 			Stage modalStage = new Stage();
-			modalStage.initModality(Modality.APPLICATION_MODAL);
+			//modalStage.initModality(Modality.APPLICATION_MODAL);
 			modalStage.initOwner(App.rootstage);
 			modalStage.setResizable(false);
 			Scene modalScene = new Scene(modal);

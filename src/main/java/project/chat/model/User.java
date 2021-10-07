@@ -13,9 +13,10 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlRootElement(name="user")
 public class User {
-	@XmlElement(name="name")
+	@XmlAttribute
 	private String name;
 	
 	public User() {

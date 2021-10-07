@@ -30,7 +30,7 @@ public class Lauch {
 		RoomDAO r2=new RoomDAO("Sala2");
 		Message m=new Message(u,"me cago en tus muelas",r1);
 		Message m2=new Message(u2,"me cago ",r2);
-		Message m3=new Message(u1,"Hola buenos dias a todos ",r2);
+		Message m3=new Message(u1,"Hola buenos dias a todos",r2);
 		
 		
 		r2.addUser(u2);

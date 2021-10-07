@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
 
 public class UserRoom {
 	@XmlElementWrapper(name="usersOnline")
-	//@XmlElement(name="user")
+	@XmlElement(name="user")
 	protected List<User> users;
 	@XmlElementWrapper(name="Rooms")
 	@XmlElement(name="room")

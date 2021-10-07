@@ -19,7 +19,7 @@ public class Message {
 	Instant instant;
 	@XmlElement(name="user")
 	private User user;
-	@XmlElement(name="message")
+	@XmlElement(name="content")
 	private String message;
 	@XmlAttribute(name="date")
 	private static Date d = new Date();
@@ -37,6 +37,12 @@ public class Message {
 	public Message(User user, String message, Room room) {
 		super();
 		this.user = user;
+		this.message = message;
+		
+	}
+	
+	public Message(String message, Room room) {
+		super();
 		this.message = message;
 		
 	}
@@ -65,7 +71,6 @@ public class Message {
 	}
 
 
-	
 	@Override
 	public String toString() {
 		return "Message [user=" + user + ", date=" + d + ", message=" + message + "]";

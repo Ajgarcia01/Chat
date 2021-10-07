@@ -17,7 +17,8 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Room {
 	@XmlAttribute(name="name")
 	protected String name;
-	@XmlElement(name="messages")
+	@XmlElementWrapper(name="messages")
+	@XmlElement(name="message")
 	protected List<Message> messages;
 	@XmlTransient
 	protected List<User>users;

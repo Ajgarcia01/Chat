@@ -1,42 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.chat.TertiaryController">
-   <children>
-      <ImageView fitHeight="727.0" fitWidth="1300.0" layoutX="-4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Imagenes/pantalla_chat.jpg" />
-         </image>
-      </ImageView>
-      <TextField fx:id="writeMessage" alignment="CENTER" layoutX="754.0" layoutY="565.0" prefHeight="55.0" prefWidth="330.0" promptText="ESCRIBA SU MENSAJE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="messages" alignment="CENTER" layoutX="763.0" layoutY="114.0" prefHeight="452.0" prefWidth="314.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <Button fx:id="out" layoutX="1183.0" layoutY="39.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="MOVE" />
-         </cursor>
-         <font>
-            <Font name="Franklin Gothic Heavy Italic" size="10.0" />
-         </font>
-      </Button>
-      <ImageView disable="true" fitHeight="40.0" fitWidth="44.0" layoutX="1189.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Imagenes/339-3396821_png-file-svg-download-icon-logout-transparent-png-removebg-preview.png" />
-         </image>
-      </ImageView>
-   </children>
-</AnchorPane>
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.chat.TertiaryController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Private Chat" />
+            <MenuItem mnemonicParsing="false" text="HELP" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane>
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="ONLINE USERS" textAlignment="CENTER" wrapText="false">
+              <font>
+                <Font size="18.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+                  <TextField fx:id="chat1" editable="false" layoutX="14.0" layoutY="41.0" prefHeight="496.0" prefWidth="193.0" />
+          </children>
+        </AnchorPane>
+        <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+          <content>
+            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="488.0" prefWidth="430.0">
+              <children>
+                <Label fx:id="chattext" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="CHAT" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <TextField fx:id="write" layoutX="3.0" layoutY="515.0" prefHeight="25.0" prefWidth="315.0" promptText="WRITE THE MESSAGE" />
+                        <Button fx:id="send" layoutX="333.0" layoutY="515.0" mnemonicParsing="false" onAction="#writeMessage" prefHeight="25.0" prefWidth="95.0" text="SEND" />
+                        <TextField fx:id="chat" editable="false" layoutX="14.0" layoutY="51.0" prefHeight="456.0" prefWidth="396.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+        <AnchorPane>
+          <children>
+            <Label fx:id="settings" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="SETTINGS" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                  <Button fx:id="update" layoutX="20.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="UPDATE NAME" />
+                  <Button fx:id="exit" layoutX="20.0" layoutY="82.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="145.0" text="EXIT" />
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="CHAT 2021" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label font="$x3" maxWidth="-1.0" text="COPYRIGHT" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
