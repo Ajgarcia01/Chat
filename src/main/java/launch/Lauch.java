@@ -72,7 +72,7 @@ public class Lauch {
 		System.out.println("Hecho");
 		 	*/
 		
-		UserRoom ur=new UserRoom();
+		UserRoom ur=UserRoom.get_Instance();
 		ur.setRooms(XMLManager.loadRooms("chat.xml"));
 		System.out.println(ur);
 	}

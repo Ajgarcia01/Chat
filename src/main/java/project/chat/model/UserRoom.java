@@ -23,7 +23,7 @@ public class UserRoom {
 	protected List<Room> rooms;
 	private static UserRoom singletoon;
 	
-	public UserRoom() {
+	protected UserRoom() {
 		users=new ArrayList<>();
 		rooms=new ArrayList<>();
 	}
@@ -90,6 +90,19 @@ public class UserRoom {
 			if (this.rooms.size() > 0 && this.users.contains(room)) {
 				this.rooms.remove(room);
 				result = true;
+			}
+		}
+		return result;
+	}
+	
+	public Room searchRoom(String name) {
+		Room result=new Room();
+		if(name!=null&&!name.equals("")) {
+			for (int i = 0; i < rooms.size(); i++) {
+				if (rooms.get(i).getName().equals(name)) {
+					result = rooms.get(i);
+					i = rooms.size();
+				}
 			}
 		}
 		return result;

@@ -26,7 +26,7 @@ public class RoomDAO extends Room{
 	public boolean addMessages(Message message) {
 		boolean result=false;
 			if(message!=null&&!message.equals("")) {
-				if(!super.messages.contains(message)&&super.users.contains(message.getUser())) {
+				if(super.users.contains(message.getUser())) {
 					super.messages.add(message);
 					result=true;
 				}

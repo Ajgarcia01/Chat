@@ -44,7 +44,7 @@ public class XMLManager {
 	public static List<Room> loadRooms(String f) throws ClassNotFoundException {
 		
 		List<Room> result=new ArrayList();
-		UserRoom ur=new UserRoom();
+		UserRoom ur=UserRoom.get_Instance();
 		try {
 			JAXBContext jc = JAXBContext.newInstance(UserRoom.class);
 			Unmarshaller u = jc.createUnmarshaller();
