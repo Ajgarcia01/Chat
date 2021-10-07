@@ -93,11 +93,12 @@ public class TertiaryController {
 			modalStage.setResizable(false);
 
 		} catch (IOException ex) {
+		
 		}
         
     }
 	
-	
+	/*
 	@FXML
 	private void updateName() throws IOException {
 		String u1 = this.old.getText();
@@ -124,7 +125,7 @@ public class TertiaryController {
 		
 	   
 	}
-	
+	*/
 
 	@FXML
 	private void writeUsers() throws IOException, JAXBException {
