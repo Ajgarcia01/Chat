@@ -34,11 +34,11 @@ public class Message {
 		
 	}
 	
-	public Message(User user, String message, Room room) {
+	public Message(User user, String message) {
 		super();
 		this.user = user;
 		this.message = message;
-		
+		this.d=new Date();
 	}
 	
 	public Message(String message, Room room) {
