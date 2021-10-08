@@ -36,18 +36,17 @@ public class SecondaryController {
 	private Button sala4;
 	
 	
-	UserRoom ur=new UserRoom();
+	
 	@FXML
     private void setRoom() throws IOException, JAXBException, ClassNotFoundException {
-       XMLManager.loadRooms("chat.xml");
-	   RoomDAO  r1 =new  RoomDAO ("Sala 1");
-       RoomDAO  r2 =new  RoomDAO ("Sala 2");
-       RoomDAO  r3 =new  RoomDAO ("Sala 3");
-       RoomDAO  r4 =new  RoomDAO ("Sala 4");
-    
+	   UserRoom ur=UserRoom.get_Instance();
+	   ur.setRooms(XMLManager.loadRooms("chat.xml"));
+	   System.out.println(ur.getRooms().get(0));
+	   Room  r1 = ur.getRooms().get(0);
+	   System.out.println(r1);
+	   
         	
         	if(sala1.isFocused()) {
-        		 XMLManager.loadRooms("chat.xml");
         		 System.out.println("1");
         		 ur.addRoom(r1);
         		 System.out.println("añadida");
@@ -56,35 +55,6 @@ public class SecondaryController {
         		 modalChat();
         		
         	}
-        	if(sala2.isFocused()) {
-        		 XMLManager.loadRooms("chat.xml");
-        		 System.out.println("1");
-        		 ur.addRoom(r2);
-        		 System.out.println("añadida");
-        		 XMLManager.marshal(ur, new File("chat.xml"));
-        		 System.out.println(r2.getName());	
-        		 modalChat();
-        	}
-        	if(sala3.isFocused()) {
-        		 XMLManager.loadRooms("chat.xml");
-        		 System.out.println("1");
-        		 ur.addRoom(r3);
-        		 System.out.println("añadida");
-        		 XMLManager.marshal(ur, new File("chat.xml"));
-        		 System.out.println(r3.getName());	
-        		 modalChat();
-            	}	
-        	if(sala4.isFocused()) {
-        		 XMLManager.loadRooms("chat.xml");
-        		 System.out.println("1");
-        		 ur.addRoom(r4);
-        		 System.out.println("añadida");
-        		 XMLManager.marshal(ur, new File("chat.xml"));
-        		 System.out.println(r4.getName());	
-        		 modalChat();
-        		 
-            	}
-        	
         }
 	
 	@FXML

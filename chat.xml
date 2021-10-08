@@ -2,7 +2,10 @@
 <CHAT>
     <usersOnline/>
     <Rooms>
-        <room name="Sala 1">
+        <room name="Sala1">
+            <messages/>
+        </room>
+        <room name="Sala2">
             <messages/>
         </room>
     </Rooms>
