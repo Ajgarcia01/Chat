@@ -22,16 +22,6 @@ public class RoomDAO extends Room{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public boolean addMessages(Message message) {
-		boolean result=false;
-			if(message!=null&&!message.equals("")) {
-				if(super.users.contains(message.getUser())) {
-					super.messages.add(message);
-					result=true;
-				}
-			}
-		return result;
-	}
 	public boolean removeMessage(Message message) {
 		boolean result = false;
 		if (message != null) {

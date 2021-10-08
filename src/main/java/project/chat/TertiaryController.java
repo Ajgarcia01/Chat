@@ -64,7 +64,7 @@ public class TertiaryController {
 
 	UserRoom ur=UserRoom.get_Instance();
 	UserDAO udao=UserDAO.getInstance();
-	RoomDAO rr;
+	Room rr;
 	
 	@FXML
 	private void exit(ActionEvent event) throws IOException {

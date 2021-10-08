@@ -70,6 +70,16 @@ public class Room {
 		this.users = users;
 	}
 	
+	public boolean addMessages(Message message) {
+		boolean result=false;
+			if(message!=null&&!message.equals("")) {
+				if(users.contains(message.getUser())) {
+					messages.add(message);
+					result=true;
+				}
+			}
+		return result;
+	}
 	
 	@Override
 	public boolean equals(Object obj) {

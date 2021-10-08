@@ -96,7 +96,7 @@ public class SecondaryController {
 	}
 	
 	private void salas(String sala) throws IOException {
-		RoomDAO r1 =ur.searchRoom(sala);
+		Room r1 = ur.searchRoom(sala);
 		System.out.println(r1);
 		if(r1.getName().equals("")) {
 			r1.setName(sala);
