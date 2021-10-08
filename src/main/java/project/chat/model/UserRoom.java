@@ -95,6 +95,25 @@ public class UserRoom {
 		return result;
 	}
 	
+	public void updateUser(User u, String name){
+		if(name!=null&&!name.equals("")) {
+			User u2=searchUser(u.getName());
+			int i=users.indexOf(u);
+			u2.setName(name);
+			users.set(i, u2);
+		}
+		
+	}
+	public void updateRoom(Room r, String name){
+		if(name!=null&&!name.equals("")) {
+			Room r2=searchRoom(r.getName());
+			int i=rooms.indexOf(r);
+			r2.setName(name);
+			rooms.set(i, r2);
+		}
+		
+	}
+	
 	public Room searchRoom(String name) {
 		Room result=new Room();
 		if(name!=null&&!name.equals("")) {

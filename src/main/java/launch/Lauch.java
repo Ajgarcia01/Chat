@@ -17,6 +17,8 @@ public class Lauch {
 
 	public static void main(String[] args) throws JAXBException, ClassNotFoundException, IOException {
 		// TODO Auto-generated method stub
+		
+		/*
 		UserRoom ur=UserRoom.get_Instance();
 		System.out.println("Hola");
 
@@ -58,6 +60,37 @@ public class Lauch {
 		Room rr= ur.getRooms().get(0);
 		System.out.println(rr);
 		System.out.println(ur.getRooms().get(0));
+		*/
+	}
+	public static void updateUserTest() {//funciona
+		User u=new User("Juan");
+		User u1=new User("Jose");
+		User u2=new User("Juanitor");
+		User u3=new User("Rambo");
+		UserRoom ur=UserRoom.get_Instance();
+		ur.addUser(u);
+		ur.addUser(u1);
+		ur.addUser(u2);
+		ur.addUser(u3);
+		System.out.println(ur.getUsers());
+		ur.updateUser(u, "Juan23");
+		System.out.println(ur.getUsers());
+		
+	}
+	public static void updateRoomTest() {//funciona
+		Room r=new Room("Algo");
+		Room r1=new Room("Algo2");
+		Room r2=new Room("Algo3");
+		Room r3=new Room("Algo4");
+		UserRoom ur=UserRoom.get_Instance();
+		ur.addRoom(r);
+		ur.addRoom(r1);
+		ur.addRoom(r2);
+		ur.addRoom(r3);
+		System.out.println(ur.getRooms());
+		ur.updateRoom(r,"asej" );
+		System.out.println(ur.getRooms());
+		System.out.println();
 	}
 
 }
