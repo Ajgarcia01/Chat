@@ -16,6 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.chat.Utils.XMLManager;
 import project.chat.controller.RoomDAO;
+import project.chat.controller.UserDAO;
 import project.chat.model.User;
 import project.chat.model.UserRoom;
 
@@ -59,12 +60,9 @@ public class PrimaryController {
 				e.printStackTrace();
 			}
 			String name= nickname.getText();
-			RoomDAO rDAO= new RoomDAO();
-			User u= new User();
-			rDAO.addUser(u);
+			User u=new User();
 			u.setName(name);
 			ur.addUser(u);
-			u.setName(name);
 			XMLManager.marshal(ur, new File("chat.xml"));
 			System.out.println(name);
 

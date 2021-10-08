@@ -17,7 +17,6 @@ public class RoomDAO extends Room{
 		super(name, messages, users);
 		// TODO Auto-generated constructor stub
 	}
-
 	public RoomDAO(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub

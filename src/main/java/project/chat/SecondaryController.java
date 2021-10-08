@@ -17,6 +17,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.chat.Utils.XMLManager;
 import project.chat.controller.RoomDAO;
+import project.chat.controller.UserDAO;
 import project.chat.model.Room;
 import project.chat.model.UserRoom;
 
@@ -36,24 +37,23 @@ public class SecondaryController {
 	private Button sala4;
 	
 	
-	
 	@FXML
     private void setRoom() throws IOException, JAXBException, ClassNotFoundException {
-	   UserRoom ur=UserRoom.get_Instance();
-	   ur.setRooms(XMLManager.loadRooms("chat.xml"));
-	   System.out.println(ur.getRooms().get(0));
-	   Room  r1 = ur.getRooms().get(0);
-	   System.out.println(r1);
-	   
-        	
         	if(sala1.isFocused()) {
-        		 System.out.println("1");
-        		 ur.addRoom(r1);
-        		 System.out.println("añadida");
-        		 XMLManager.marshal(ur, new File("chat.xml"));
-        		 System.out.println(r1.getName());	
-        		 modalChat();
-        		
+        		System.out.println(sala1.getText()); 
+        		salas("SALA 1");	
+        	}
+        	if(sala2.getText()!=null && sala2.isFocused()) {
+       		 	System.out.println(sala2.getText());
+        		salas("SALA 2");	
+        	}
+        	if(sala3.getText()!=null && sala3.isFocused()) {
+        		System.out.println(sala3.getText());
+        		salas("SALA 3");	
+        	}
+        	if(sala4.getText()!=null && sala4.isFocused()) {
+        		System.out.println(sala4.getText());
+        		salas("SALA 4");	
         	}
         }
 	
@@ -82,5 +82,28 @@ public class SecondaryController {
 	    Node source = (Node) event.getSource();
 	    Stage stage = (Stage) source.getScene().getWindow();
 	    stage.close();
+	}
+	
+	private void salas(String sala) throws IOException {
+		UserDAO u= UserDAO.getInstance();
+		UserRoom ur=UserRoom.get_Instance();
+		
+		Room r1 =ur.searchRoom(sala);
+		if(r1.getName().equals("")) {
+			r1.setName(sala); 
+		}
+		System.out.println(r1);
+		ur.addRoom(r1);
+		try {
+			XMLManager.marshal(ur, new File("chat.xml"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		modalChat();
+	
 	}
  }

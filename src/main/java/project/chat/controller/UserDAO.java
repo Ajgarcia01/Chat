@@ -4,8 +4,8 @@ import project.chat.model.User;
 
 public class UserDAO extends User{
 	private static UserDAO _Instance;
-
-	public UserDAO() {
+	
+	private UserDAO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -15,13 +15,13 @@ public class UserDAO extends User{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public UserDAO getInstance() {
+	public static UserDAO getInstance() {
 		if(_Instance==null) {
 			_Instance=new UserDAO();
 		}
 		return _Instance;
 	}
-	public UserDAO getInstance(String name) {
+	public static UserDAO getInstance(String name) {
 		if(_Instance==null) {
 			_Instance=new UserDAO(name);
 		}

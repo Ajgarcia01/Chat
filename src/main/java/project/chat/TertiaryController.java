@@ -72,8 +72,7 @@ public class TertiaryController {
 	
 	@FXML
 	private void writeMessage() throws IOException, JAXBException {
-		UserDAO u1=new UserDAO();
-		u1.getInstance();
+		
 		
 		
 	   
