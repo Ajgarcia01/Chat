@@ -16,7 +16,12 @@ public class RoomDAO {
 	}
 
 
-
+	public static String getInstance() {
+		if(_Instance==null) {
+			_Instance="";
+		}
+		return _Instance;
+	}
 	public static String getInstance(String room) {
 		if(_Instance==null) {
 			_Instance=room;
@@ -26,6 +31,7 @@ public class RoomDAO {
 		return _Instance;
 	}
 	
-		
+	
+	
 	
 }
