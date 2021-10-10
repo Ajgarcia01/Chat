@@ -30,7 +30,10 @@ public class UserRoom {
 	
 	//singleton
 	public static UserRoom get_Instance() {
-		singletoon=new UserRoom();
+		if(singletoon==null) {
+			singletoon=new UserRoom();	
+		}
+		
 		
 		return singletoon;
 		

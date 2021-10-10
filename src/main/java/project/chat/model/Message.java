@@ -27,7 +27,8 @@ public class Message {
 	@XmlAttribute(name="date")
 	@XmlJavaTypeAdapter(value=LocalDateTimeAdapter.class)
 	private LocalDateTime date;
-	
+	//¿Es necesario?
+	//private Room room;
 	
 	
 	public Message() {

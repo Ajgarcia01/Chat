@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <CHAT>
-    <usersOnline/>
+    <usersOnline>
+        <user name="Juan"/>
+    </usersOnline>
     <Rooms>
         <room name="Sala1">
             <messages>
@@ -29,6 +31,12 @@
                     <content>yo si</content>
                 </message>
             </messages>
+        </room>
+        <room name="SALA 3">
+            <messages/>
+        </room>
+        <room name="SALA 2">
+            <messages/>
         </room>
     </Rooms>
 </CHAT>

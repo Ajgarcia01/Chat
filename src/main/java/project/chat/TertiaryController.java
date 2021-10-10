@@ -27,6 +27,7 @@ import project.chat.model.Room;
 import project.chat.model.User;
 import project.chat.model.UserRoom;
 
+
 public class TertiaryController {
 	@FXML
 	private Button exit;
@@ -61,7 +62,9 @@ public class TertiaryController {
 	@FXML
 	private Label chattext;
 
-	
+	UserRoom ur=UserRoom.get_Instance();
+	UserDAO udao=UserDAO.getInstance();
+	Room rr;
 	
 	@FXML
 	private void exit(ActionEvent event) throws IOException {
@@ -72,10 +75,18 @@ public class TertiaryController {
 	
 	@FXML
 	private void writeMessage() throws IOException, JAXBException {
+		ur.getRooms().get(0);
+		String mensaje=write.getText();
+		System.out.println(mensaje);
+		Message mg=new Message(udao, mensaje);
+		rr.addMessages(mg);
+		System.out.println(mg.getMessage());
 		
 		
-		
+		chat.setText(rr.getMessages().toString());
+		XMLManager.marshal(ur, new File("chat.xml"));
 	   
+
 	}
 	
 	
@@ -131,7 +142,7 @@ public class TertiaryController {
 
 	@FXML
 	private void writeUsers() throws IOException, JAXBException {
-	   
+		chat1.setText(ur.getUsers().toString());
 	}
 	
 	

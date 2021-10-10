@@ -37,9 +37,20 @@ public class SecondaryController {
 	private Button sala4;
 	
 	
+	UserRoom ur=UserRoom.get_Instance();
+	UserDAO udao=UserDAO.getInstance();
+	/*
 	@FXML
-    private void setRoom() throws IOException, JAXBException, ClassNotFoundException {
-        	if(sala1.isFocused()) {
+	private void Initializable() throws ClassNotFoundException {
+		ur=UserRoom.get_Instance();
+		udao=UserDAO.getInstance();
+	}
+	*/
+	
+	
+	@FXML
+    private void setRoom() throws IOException, JAXBException, ClassNotFoundException {	
+		if(sala1.isFocused()) {
         		System.out.println(sala1.getText()); 
         		salas("SALA 1");	
         	}
@@ -85,12 +96,10 @@ public class SecondaryController {
 	}
 	
 	private void salas(String sala) throws IOException {
-		UserDAO u= UserDAO.getInstance();
-		UserRoom ur=UserRoom.get_Instance();
-		
-		Room r1 =ur.searchRoom(sala);
+		Room r1 = ur.searchRoom(sala);
+		System.out.println(r1);
 		if(r1.getName().equals("")) {
-			r1.setName(sala); 
+			r1.setName(sala);
 		}
 		System.out.println(r1);
 		ur.addRoom(r1);

@@ -27,20 +27,16 @@ public class PrimaryController {
 	
 	@FXML
 	private Button getin;
+	UserRoom ur;
+	UserDAO udao;
 	
 	@FXML
-	private void Initializable() throws ClassNotFoundException {
-		UserRoom ur=UserRoom.get_Instance();
+	private void initialize() throws ClassNotFoundException {
+		ur=UserRoom.get_Instance();
 		ur.setRooms(XMLManager.loadRooms("chat.xml"));
 	}
 	
-	@FXML
-    private void getin() throws IOException, JAXBException {
-		setName();
-		App.setRoot("pantallaChats");
-		
-    }
-	
+
 	
 	 protected static Parent loadFXML(String fxml) throws IOException {
 	        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
@@ -49,20 +45,18 @@ public class PrimaryController {
 	        return fxmlLoader.load();
 	    
 	 }
-	
+	 @FXML
+	    private void getin() throws IOException, JAXBException {
+			setName();
+			App.setRoot("pantallaChats");
+			
+	    }
+		
 	@FXML
     private void setName() throws IOException, JAXBException {
-			UserRoom ur=UserRoom.get_Instance();
-			try {
-				ur.setRooms(XMLManager.loadRooms("chat.xml"));
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			String name= nickname.getText();
-			User u=new User();
-			u.setName(name);
-			ur.addUser(u);
+			udao=UserDAO.getInstance(name);
+			ur.addUser(udao);
 			XMLManager.marshal(ur, new File("chat.xml"));
 			System.out.println(name);
 
