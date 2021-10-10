@@ -78,6 +78,37 @@ public class Room {
 			}
 		return result;
 	}
+	 public boolean removeMessage(Message message) {
+	        boolean result = false;
+	        if (message != null) {
+	            if (this.messages.size() > 0 && this.messages.contains(message)) {
+	                this.messages.remove(messages);
+	                result = true;
+	            }
+	        }
+	        return result;
+	    }
+	    
+	    public boolean addUser(User user) {
+	        boolean result=false;
+	            if(user!=null&&!user.getName().equals("")) {
+	                if(!users.contains(user)) {
+	                    users.add(user);
+	                    result=true;
+	                }
+	            }
+	        return result;
+	    }
+	    public boolean removeUser(User user) {
+	        boolean result = false;
+	        if (user != null) {
+	            if (this.users.size() > 0 && this.users.contains(user)) {
+	                this.users.remove(user);
+	                result = true;
+	            }
+	        }
+	        return result;
+	    }
 	
 	@Override
 	public boolean equals(Object obj) {

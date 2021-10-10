@@ -94,8 +94,8 @@ public class Lauch {
 	}
 	public static void LocalDateTimeAdapterTest() {
 		UserRoom ur=UserRoom.get_Instance();
-		RoomDAO r1=new RoomDAO("Sala1");
-		RoomDAO r2=new RoomDAO("Sala2");
+		Room r1=new Room("Sala1");
+		Room r2=new Room("Sala2");
 		User u=new User("Juan");
 		User u1=new User("Jose");
 		User u2=new User("Juanitor");
