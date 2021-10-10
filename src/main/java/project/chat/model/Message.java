@@ -1,7 +1,7 @@
 package project.chat.model;
 
 import java.time.Instant;
-
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,6 +10,9 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import project.chat.Utils.LocalDateTimeAdapter;
 
 
 @XmlRootElement(name="hola")
@@ -22,58 +25,60 @@ public class Message {
 	@XmlElement(name="content")
 	private String message;
 	@XmlAttribute(name="date")
-	private Date d = new Date();
-	//¿Es necesario?
-	//private Room room;
+	@XmlJavaTypeAdapter(value=LocalDateTimeAdapter.class)
+	private LocalDateTime date;
+	
 	
 	
 	public Message() {
 		this.user=new User();
 		this.message="";
-		this.d=new Date();
-		
+		this.date=LocalDateTime.now();
 	}
 	
-	public Message(User user, String message, Room room) {
+	public Message(User user, String message) {
 		super();
 		this.user = user;
 		this.message = message;
-		
+		this.date=LocalDateTime.now();
 	}
 	
-	public Message(String message, Room room) {
-		super();
-		this.message = message;
-		
-	}
+	
 
-	public Message(User user, Date d, String message, Room room) {
+	public Message(User user, Date d, String message) {
 		super();
 		this.user = user;
-		this.d=new Date();
 		this.message = message;
-	
+		this.date=LocalDateTime.now();
 	}
-
 
 	public User getUser() {
 		return user;
 	}
 
-
-	public Date getDate() {
-		return d;
+	public LocalDateTime getDate() {
+		return date;
 	}
-
 
 	public String getMessage() {
 		return message;
 	}
+	
+	public void setUser(User user) {
+		this.user = user;
+	}
 
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}
 
 	@Override
 	public String toString() {
-		return "Message [user=" + user + ", date=" + d + ", message=" + message + "]";
+		return "Message [user=" + user + ", date=" + date.getHour() + ", message=" + message + "]";
 	}
 	
 	@Override
@@ -92,10 +97,4 @@ public class Message {
 		}
 		return result;
 	}
-	
-	
-	
-	
-	
-
 }

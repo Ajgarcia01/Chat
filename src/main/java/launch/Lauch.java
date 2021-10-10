@@ -17,7 +17,7 @@ public class Lauch {
 
 	public static void main(String[] args) throws JAXBException, ClassNotFoundException, IOException {
 		// TODO Auto-generated method stub
-		
+		LocalDateTimeAdapterTest();
 		/*
 		UserRoom ur=UserRoom.get_Instance();
 		System.out.println("Hola");
@@ -91,6 +91,42 @@ public class Lauch {
 		ur.updateRoom(r,"asej" );
 		System.out.println(ur.getRooms());
 		System.out.println();
+	}
+	public static void LocalDateTimeAdapterTest() {
+		UserRoom ur=UserRoom.get_Instance();
+		RoomDAO r1=new RoomDAO("Sala1");
+		RoomDAO r2=new RoomDAO("Sala2");
+		User u=new User("Juan");
+		User u1=new User("Jose");
+		User u2=new User("Juanitor");
+		User u3=new User("Rambo");
+		Message m=new Message(u,"¿Queres algo?");
+		Message m1=new Message(u1,"no");
+		Message m2=new Message(u2,"yo si");
+		r1.addUser(u);
+		r1.addUser(u1);
+		r1.addUser(u2);
+		r1.addUser(u3);
+		r2.addUser(u);
+		r2.addUser(u2);
+		r2.addUser(u3);
+		r1.addMessages(m);
+		r1.addMessages(m1);
+		r1.addMessages(m2);
+		r2.addMessages(m);
+		r2.addMessages(m2);
+		ur.addRoom(r1);
+		ur.addRoom(r2);
+		System.out.println(ur.toString());
+		try {
+			XMLManager.marshal(ur, new File("chat.xml"));
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
