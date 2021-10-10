@@ -6,52 +6,26 @@ import project.chat.model.Message;
 import project.chat.model.Room;
 import project.chat.model.User;
 
-public class RoomDAO extends Room{
-
-	public RoomDAO() {
-		super();
-		// TODO Auto-generated constructor stub
+public class RoomDAO {
+	private static String _Instance;
+	
+	
+	
+	private RoomDAO(String room) {
+		_Instance=room;		
 	}
 
-	public RoomDAO(String name, List<Message> messages, List<User> users) {
-		super(name, messages, users);
-		// TODO Auto-generated constructor stub
-	}
-	public RoomDAO(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+
+
+	public static String getInstance(String room) {
+		if(_Instance==null) {
+			_Instance=room;
+		}else if(!_Instance.equals(room)) {
+			_Instance=room;
+		}
+		return _Instance;
 	}
 	
-	public boolean removeMessage(Message message) {
-		boolean result = false;
-		if (message != null) {
-			if (this.messages.size() > 0 && this.messages.contains(message)) {
-				this.messages.remove(messages);
-				result = true;
-			}
-		}
-		return result;
-	}
-	
-	public boolean addUser(User user) {
-		boolean result=false;
-			if(user!=null&&!user.getName().equals("")) {
-				if(!super.users.contains(user)) {
-					super.users.add(user);
-					result=true;
-				}
-			}
-		return result;
-	}
-	public boolean removeUser(User user) {
-		boolean result = false;
-		if (user != null) {
-			if (this.users.size() > 0 && this.users.contains(user)) {
-				this.users.remove(user);
-				result = true;
-			}
-		}
-		return result;
-	}
+		
 	
 }

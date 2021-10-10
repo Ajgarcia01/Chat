@@ -43,9 +43,7 @@ public class Room {
 		this.messages = new ArrayList<>();
 		this.users = new ArrayList<>();
 	}
-
-
-
+	
 	public String getName() {
 		return name;
 	}
