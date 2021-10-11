@@ -40,6 +40,8 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -72,7 +74,13 @@
                 <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
               </textFill>
             </Label>
-                  <TextField fx:id="chat1" editable="false" layoutX="14.0" layoutY="41.0" prefHeight="496.0" prefWidth="193.0" />
+                  <TextField fx:id="chat1" editable="false" layoutX="14.0" layoutY="41.0" prefHeight="366.0" prefWidth="193.0" />
+                  <TextField fx:id="salaes" editable="false" layoutX="37.0" layoutY="443.0" prefHeight="65.0" prefWidth="149.0" />
+                  <TableView fx:id="tablauser" layoutX="13.0" layoutY="41.0" onSort="#tableUsuarios" prefHeight="366.0" prefWidth="193.0">
+                    <columns>
+                      <TableColumn fx:id="usuarios" prefWidth="192.0" text="USERS" />
+                    </columns>
+                  </TableView>
           </children>
         </AnchorPane>
         <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
@@ -80,9 +88,16 @@
             <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="488.0" prefWidth="430.0">
               <children>
                 <Label fx:id="chattext" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="CHAT" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-                        <TextField fx:id="write" layoutX="3.0" layoutY="515.0" prefHeight="25.0" prefWidth="315.0" promptText="WRITE THE MESSAGE" />
+                        <TextField fx:id="write" layoutX="3.0" layoutY="515.0" onAction="#writeMessage" prefHeight="25.0" prefWidth="315.0" promptText="WRITE THE MESSAGE" />
                         <Button fx:id="send" layoutX="333.0" layoutY="515.0" mnemonicParsing="false" onAction="#writeMessage" prefHeight="25.0" prefWidth="95.0" text="SEND" />
                         <TextField fx:id="chat" editable="false" layoutX="14.0" layoutY="51.0" prefHeight="456.0" prefWidth="396.0" />
+                        <TableView fx:id="tablamensages" layoutX="14.0" layoutY="51.0" prefHeight="455.0" prefWidth="395.0">
+                          <columns>
+                            <TableColumn fx:id="usercolumn" prefWidth="90.0" text="USER" />
+                            <TableColumn fx:id="datecolumn" prefWidth="93.0" text="DATE" />
+                              <TableColumn fx:id="messagecolumn" prefWidth="209.0" text="MESSAGE" />
+                          </columns>
+                        </TableView>
               </children>
             </AnchorPane>
           </content>
@@ -90,8 +105,7 @@
         <AnchorPane>
           <children>
             <Label fx:id="settings" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="SETTINGS" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-                  <Button fx:id="update" layoutX="20.0" layoutY="49.0" mnemonicParsing="false" onAction="#modalUpdate" prefHeight="25.0" prefWidth="145.0" text="UPDATE NAME" />
-                  <Button fx:id="exit" layoutX="20.0" layoutY="82.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="145.0" text="EXIT" />
+                  <Button fx:id="exit" layoutX="45.0" layoutY="82.0" mnemonicParsing="false" onAction="#exit" prefHeight="55.0" prefWidth="120.0" text="EXIT" />
           </children>
         </AnchorPane>
       </items>

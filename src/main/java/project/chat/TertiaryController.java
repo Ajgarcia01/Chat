@@ -7,6 +7,9 @@ import java.util.List;
 
 import javax.xml.bind.JAXBException;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +19,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.chat.Utils.XMLManager;
 import project.chat.controller.RoomDAO;
@@ -33,9 +39,6 @@ public class TertiaryController {
 	private Button exit;
 	
 	@FXML
-	private Button update;
-	
-	@FXML
 	private Button send;
 	
 	
@@ -43,15 +46,11 @@ public class TertiaryController {
 	private TextField write;
 	
 	@FXML
+	private TextField salaes;
+	
+	@FXML
 	private TextField chat;
-	
 
-	@FXML
-	private TextField old;
-	
-
-	@FXML
-	private TextField newname;
 	
 	@FXML
 	private TextField chat1;
@@ -62,9 +61,44 @@ public class TertiaryController {
 	@FXML
 	private Label chattext;
 
-	UserRoom ur=UserRoom.get_Instance();
-	UserDAO udao=UserDAO.getInstance();
+	@FXML
+	private TableView<User> tablauser;
+	@FXML
+	private TableView<Message> tablamensages;
+	@FXML
+	private TableColumn<User, String> usuarios;
+	
+	@FXML
+	private TableColumn<Message, String> messagecolumn;
+	@FXML
+	private TableColumn<Message, String> usercolumn;
+	@FXML
+	private TableColumn<Message, String> datecolumn;
+	
+	
+	UserRoom ur;
+	UserDAO udao;
 	Room rr;
+	String sala;
+	
+	
+	
+	@FXML
+	private void  initialize() throws ClassNotFoundException {
+		ur=UserRoom.get_Instance();
+		udao=UserDAO.getInstance();
+		sala=RoomDAO.getInstance();
+		if(ur.searchRoom(sala).getName().equals("")){
+			rr=new Room(sala);
+		}else {
+			rr=ur.searchRoom(sala);
+		}
+		rr.addUser(udao);
+		salaes.setText(sala);
+		chat1.setText(rr.getUsers().toString());
+
+		tableUsuarios();
+	}
 	
 	@FXML
 	private void exit(ActionEvent event) throws IOException {
@@ -75,14 +109,12 @@ public class TertiaryController {
 	
 	@FXML
 	private void writeMessage() throws IOException, JAXBException {
-		ur.getRooms().get(0);
+		rr.getName().concat(sala);
 		String mensaje=write.getText();
 		System.out.println(mensaje);
 		Message mg=new Message(udao, mensaje);
 		rr.addMessages(mg);
 		System.out.println(mg.getMessage());
-		
-		
 		chat.setText(rr.getMessages().toString());
 		XMLManager.marshal(ur, new File("chat.xml"));
 	   
@@ -111,39 +143,19 @@ public class TertiaryController {
         
     }
 	
-	/*
 	@FXML
-	private void updateName() throws IOException {
-		String u1 = this.old.getText();
-		String u2 = this.newname.getText();
-		RoomDAO ur=new RoomDAO();
-		User u11=new User();
-		u11.setName(u2);
+	public void tableUsuarios() {
+		tablauser.setItems(FXCollections.observableArrayList(rr.getUsers()));
+		usuarios.setCellValueFactory(new PropertyValueFactory<User, String>("usuarios"));
+	}
+	
+	@FXML
+	public void configureUsers() {
 		
-		if (ur.addUser(u11)==true) {
-			Alert alert = new Alert(Alert.AlertType.INFORMATION);
-			alert.setHeaderText(null);
-			alert.setTitle("ENHORABUENA");
-			alert.setContentText("USUARIO MODIFICADO CON EXITO");
-			alert.showAndWait();
-			
-		} else {
-				Alert alert = new Alert(Alert.AlertType.ERROR);
-				alert.setHeaderText(null);
-				alert.setTitle("ERROR");
-				alert.setContentText("EN ALGO TE HAS EQUIVOCADO");
-				alert.showAndWait();
-		
+		 usuarios.setCellValueFactory(eachStudent -> {
+	            SimpleStringProperty v = new SimpleStringProperty();
+	            v.setValue(eachStudent.getValue().getName());
+	            return v;
+	        });
 		}
-		
-	   
-	}
-	*/
-
-	@FXML
-	private void writeUsers() throws IOException, JAXBException {
-		chat1.setText(ur.getUsers().toString());
-	}
-	
-	
 }

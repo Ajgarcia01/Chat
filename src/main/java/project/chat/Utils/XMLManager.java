@@ -15,6 +15,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import project.chat.model.Room;
+import project.chat.model.User;
 import project.chat.model.UserRoom;
 
 public class XMLManager {
@@ -50,6 +51,22 @@ public class XMLManager {
 			Unmarshaller u = jc.createUnmarshaller();
 			 ur = (UserRoom) u.unmarshal(new File(f));
 			 result.addAll(ur.getRooms());
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+		return result;
+
+	}
+	
+	public static List<User> loadUsers(String f) throws ClassNotFoundException {
+		
+		List<User> result=new ArrayList();
+		UserRoom ur=UserRoom.get_Instance();
+		try {
+			JAXBContext jc = JAXBContext.newInstance(UserRoom.class);
+			Unmarshaller u = jc.createUnmarshaller();
+			 ur = (UserRoom) u.unmarshal(new File(f));
+			 result.addAll(ur.getUsers());
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}

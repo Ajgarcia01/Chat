@@ -129,7 +129,7 @@ public class Room {
 
 	@Override
 	public String toString() {
-		return "Room [name=" + name + ", users=" + ", messages=" + messages.toString() + "]";
+		return "Room [name=" + name + ", users=" +users+ ", messages=" + messages.toString() + "]";
 	}
 
 	//+ users.toString() 

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <CHAT>
     <usersOnline>
-        <user name="Juan"/>
+        <user name="Pepe"/>
+        <user name="Manolo72"/>
+        <user name="sssssssssssssssssssssss"/>
+        <user name="sssss"/>
+        <user name="JOSEE"/>
     </usersOnline>
     <Rooms>
         <room name="Sala1">
@@ -31,12 +35,6 @@
                     <content>yo si</content>
                 </message>
             </messages>
-        </room>
-        <room name="SALA 3">
-            <messages/>
-        </room>
-        <room name="SALA 2">
-            <messages/>
         </room>
     </Rooms>
 </CHAT>

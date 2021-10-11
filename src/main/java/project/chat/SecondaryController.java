@@ -37,35 +37,37 @@ public class SecondaryController {
 	private Button sala4;
 	
 	
-	UserRoom ur=UserRoom.get_Instance();
-	UserDAO udao=UserDAO.getInstance();
-	/*
+	UserRoom ur;
+	UserDAO udao;
+	Room rr;
+	RoomDAO r2;
+	
 	@FXML
-	private void Initializable() throws ClassNotFoundException {
+	private void  initialize() throws ClassNotFoundException {
 		ur=UserRoom.get_Instance();
 		udao=UserDAO.getInstance();
 	}
-	*/
+	
 	
 	
 	@FXML
     private void setRoom() throws IOException, JAXBException, ClassNotFoundException {	
 		if(sala1.isFocused()) {
-        		System.out.println(sala1.getText()); 
-        		salas("SALA 1");	
+        		String sala=sala1.getText(); 
+        		salas(sala);
         	}
-        	if(sala2.getText()!=null && sala2.isFocused()) {
-       		 	System.out.println(sala2.getText());
-        		salas("SALA 2");	
-        	}
-        	if(sala3.getText()!=null && sala3.isFocused()) {
-        		System.out.println(sala3.getText());
-        		salas("SALA 3");	
-        	}
-        	if(sala4.getText()!=null && sala4.isFocused()) {
-        		System.out.println(sala4.getText());
-        		salas("SALA 4");	
-        	}
+		if(sala2.isFocused()) {
+    		String sala=sala2.getText(); 
+    		salas(sala);
+    	}
+		if(sala3.isFocused()) {
+    		String sala=sala3.getText(); 
+    		salas(sala);
+    	}
+		if(sala4.isFocused()) {
+    		String sala=sala4.getText(); 
+    		salas(sala);
+    	}
         }
 	
 	@FXML
@@ -96,13 +98,13 @@ public class SecondaryController {
 	}
 	
 	private void salas(String sala) throws IOException {
-		Room r1 = ur.searchRoom(sala);
-		System.out.println(r1);
-		if(r1.getName().equals("")) {
-			r1.setName(sala);
+		rr=ur.searchRoom(sala);
+		RoomDAO.getInstance(sala);
+		if(rr.getName().equals("")) {
+			rr.setName(sala);
+			
 		}
-		System.out.println(r1);
-		ur.addRoom(r1);
+		
 		try {
 			XMLManager.marshal(ur, new File("chat.xml"));
 		} catch (IOException e) {

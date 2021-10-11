@@ -14,6 +14,6 @@
          </image>
       </ImageView>
       <TextField fx:id="nickname" alignment="CENTER" layoutX="290.0" layoutY="192.0" onAction="#setName" prefHeight="38.0" prefWidth="171.0" promptText="USERNAME" />
-      <Button fx:id="getin" layoutX="305.0" layoutY="246.0" mnemonicParsing="false" onAction="#getin" prefHeight="38.0" prefWidth="142.0" text="GET IN" />
+      <Button fx:id="getin" layoutX="305.0" layoutY="246.0" mnemonicParsing="false" onAction="#setName" prefHeight="38.0" prefWidth="142.0" text="GET IN" />
    </children>
 </AnchorPane>

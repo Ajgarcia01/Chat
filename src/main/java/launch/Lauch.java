@@ -73,7 +73,7 @@ public class Lauch {
 		ur.addUser(u2);
 		ur.addUser(u3);
 		System.out.println(ur.getUsers());
-		ur.updateUser(u, "Juan23");
+		//ur.updateUser(u, "Juan23");
 		System.out.println(ur.getUsers());
 		
 	}

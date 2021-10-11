@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
@@ -34,6 +35,8 @@ public class PrimaryController {
 	private void initialize() throws ClassNotFoundException {
 		ur=UserRoom.get_Instance();
 		ur.setRooms(XMLManager.loadRooms("chat.xml"));
+		ur.setUsers(XMLManager.loadUsers("chat.xml"));
+		
 	}
 	
 
@@ -47,19 +50,34 @@ public class PrimaryController {
 	 }
 	 @FXML
 	    private void getin() throws IOException, JAXBException {
-			setName();
-			App.setRoot("pantallaChats");
+				setName();
+			}
+		 	
 			
-	    }
+
 		
 	@FXML
-    private void setName() throws IOException, JAXBException {
+    private boolean setName() throws IOException, JAXBException {
+			boolean result=false;	
 			String name= nickname.getText();
-			udao=UserDAO.getInstance(name);
-			ur.addUser(udao);
-			XMLManager.marshal(ur, new File("chat.xml"));
-			System.out.println(name);
-
+			
+			
+			if(!ur.searchUser(name).getName().contains(name)) {
+				udao=UserDAO.getInstance(name);
+				ur.addUser(udao);
+				XMLManager.marshal(ur, new File("chat.xml"));
+				result=true;
+				App.setRoot("pantallaChats");
+				
+			}else {
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+				alert.setHeaderText(null);
+				alert.setTitle("ERROR");
+				alert.setContentText("Este nombre ya existe, intente con otro");
+				alert.showAndWait();
+			}
+			
+			return result;
     }
 	
 	}
