@@ -55,18 +55,22 @@ public class SecondaryController {
 		if(sala1.isFocused()) {
         		String sala=sala1.getText(); 
         		salas(sala);
+        		
         	}
 		if(sala2.isFocused()) {
     		String sala=sala2.getText(); 
     		salas(sala);
+    		
     	}
 		if(sala3.isFocused()) {
     		String sala=sala3.getText(); 
     		salas(sala);
+    		
     	}
 		if(sala4.isFocused()) {
     		String sala=sala4.getText(); 
     		salas(sala);
+    		
     	}
         }
 	
@@ -115,6 +119,5 @@ public class SecondaryController {
 			e.printStackTrace();
 		}
 		modalChat();
-	
 	}
  }

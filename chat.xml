@@ -2,13 +2,13 @@
 <CHAT>
     <usersOnline>
         <user name="Pepe"/>
-        <user name="Manolo72"/>
-        <user name="sssssssssssssssssssssss"/>
-        <user name="sssss"/>
-        <user name="JOSEE"/>
+        <user name="gg"/>
+        <user name="sss"/>
+        <user name="hola"/>
+        <user name="JUAN"/>
     </usersOnline>
     <Rooms>
-        <room name="Sala1">
+        <room name="SALA 1">
             <messages>
                 <message date="2021-10-10T13:34:02.398757400">
                     <user name="Juan"/>
@@ -24,7 +24,7 @@
                 </message>
             </messages>
         </room>
-        <room name="Sala2">
+        <room name="SALA 2">
             <messages>
                 <message date="2021-10-10T13:34:02.398757400">
                     <user name="Juan"/>

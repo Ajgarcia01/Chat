@@ -10,6 +10,7 @@ module project.chat {
     opens project.chat.Utils to com.sun.xml.bind.v2.ClassFactory;
     exports project.chat;
     exports project.chat.Utils;
+    exports project.chat.model;
    
     
 }

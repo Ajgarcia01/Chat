@@ -8,6 +8,7 @@ import java.util.List;
 import javax.xml.bind.JAXBException;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,11 +21,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import project.chat.Utils.XMLManager;
 import project.chat.controller.RoomDAO;
 import project.chat.controller.UserDAO;
@@ -81,13 +84,14 @@ public class TertiaryController {
 	Room rr;
 	String sala;
 	
-	
-	
 	@FXML
 	private void  initialize() throws ClassNotFoundException {
 		ur=UserRoom.get_Instance();
 		udao=UserDAO.getInstance();
 		sala=RoomDAO.getInstance();
+		tableUsuarios();
+	
+		
 		if(ur.searchRoom(sala).getName().equals("")){
 			rr=new Room(sala);
 		}else {
@@ -95,9 +99,8 @@ public class TertiaryController {
 		}
 		rr.addUser(udao);
 		salaes.setText(sala);
-		chat1.setText(rr.getUsers().toString());
-
-		tableUsuarios();
+		
+		chat1.setText(ur.getUsers().toString());
 	}
 	
 	@FXML
@@ -122,40 +125,15 @@ public class TertiaryController {
 	}
 	
 	
-	@FXML
-    public void modalUpdate() throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("nickname.fxml"));
-		Parent modal;
-		try {
-			modal = fxmlLoader.load();
-			Stage modalStage = new Stage();
-			//modalStage.initModality(Modality.APPLICATION_MODAL);
-			modalStage.initOwner(App.rootstage);
-			modalStage.setResizable(false);
-			Scene modalScene = new Scene(modal);
-			modalStage.setScene(modalScene);
-			modalStage.showAndWait();
-			modalStage.setResizable(false);
-
-		} catch (IOException ex) {
-		
-		}
-        
-    }
+	
 	
 	@FXML
 	public void tableUsuarios() {
+		//IMPRIMIR IMPRIME PERO LA LISTA ENTERA PORQUE ROOM AL ESTAR VACIA NO CARGA NADA
+		//ENTONCES HAY QUE ASOCIAR LA SALA QUE TE TRAES CON ROOM PARA QUE IMPRIMA
 		tablauser.setItems(FXCollections.observableArrayList(rr.getUsers()));
-		usuarios.setCellValueFactory(new PropertyValueFactory<User, String>("usuarios"));
+		usuarios.setCellValueFactory(new PropertyValueFactory<User,String>("name"));
 	}
 	
-	@FXML
-	public void configureUsers() {
-		
-		 usuarios.setCellValueFactory(eachStudent -> {
-	            SimpleStringProperty v = new SimpleStringProperty();
-	            v.setValue(eachStudent.getValue().getName());
-	            return v;
-	        });
-		}
+
 }
