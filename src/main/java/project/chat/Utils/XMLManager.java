@@ -74,6 +74,11 @@ public class XMLManager {
 
 	}
 
-	
+	public static UserRoom unmarshalling(String xml) throws JAXBException {
+		 JAXBContext jc = JAXBContext.newInstance(UserRoom.class);
+	     Unmarshaller u = jc.createUnmarshaller();
+	     UserRoom o = (UserRoom) u.unmarshal( new File(xml) );
+	     return o;
+	}
 
 }

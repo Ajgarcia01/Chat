@@ -28,6 +28,7 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import project.chat.Utils.Update;
 import project.chat.Utils.XMLManager;
 import project.chat.controller.RoomDAO;
 import project.chat.controller.UserDAO;
@@ -83,24 +84,28 @@ public class TertiaryController {
 	UserDAO udao;
 	Room rr;
 	String sala;
-	
+	Update up1=new Update();
 	@FXML
-	private void  initialize() throws ClassNotFoundException {
+	private void  initialize() throws ClassNotFoundException, IOException, JAXBException {
 		ur=UserRoom.get_Instance();
 		udao=UserDAO.getInstance();
 		sala=RoomDAO.getInstance();
-		tableUsuarios();
-	
+		salaes.setText(sala);
+		
 		
 		if(ur.searchRoom(sala).getName().equals("")){
 			rr=new Room(sala);
+			ur.addRoom(rr);
 		}else {
 			rr=ur.searchRoom(sala);
 		}
+		XMLManager.marshal(ur, new File("chat.xml"));
 		rr.addUser(udao);
-		salaes.setText(sala);
+		tableUsuarios();
+		tableMensajes();
+		up1.run();
 		
-		chat1.setText(ur.getUsers().toString());
+		//chat1.setText(ur.getUsers().toString());
 	}
 	
 	@FXML
@@ -117,8 +122,7 @@ public class TertiaryController {
 		System.out.println(mensaje);
 		Message mg=new Message(udao, mensaje);
 		rr.addMessages(mg);
-		System.out.println(mg.getMessage());
-		chat.setText(rr.getMessages().toString());
+		System.out.println(mg.toString());
 		XMLManager.marshal(ur, new File("chat.xml"));
 	   
 
@@ -129,11 +133,21 @@ public class TertiaryController {
 	
 	@FXML
 	public void tableUsuarios() {
-		//IMPRIMIR IMPRIME PERO LA LISTA ENTERA PORQUE ROOM AL ESTAR VACIA NO CARGA NADA
-		//ENTONCES HAY QUE ASOCIAR LA SALA QUE TE TRAES CON ROOM PARA QUE IMPRIMA
+		
+	
 		tablauser.setItems(FXCollections.observableArrayList(rr.getUsers()));
 		usuarios.setCellValueFactory(new PropertyValueFactory<User,String>("name"));
 	}
+	
+	@FXML
+	public void tableMensajes() {
+		
+		tablamensages.setItems(FXCollections.observableArrayList(rr.getMessages()));
+		messagecolumn.setCellValueFactory(new PropertyValueFactory<Message,String>("message"));
+		usercolumn.setCellValueFactory(new PropertyValueFactory<Message,String>("user"));
+		datecolumn.setCellValueFactory(new PropertyValueFactory<Message,String>("date"));
+	}
+	
 	
 
 }

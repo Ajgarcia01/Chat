@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <CHAT>
     <usersOnline>
-        <user name="Pepe"/>
-        <user name="gg"/>
-        <user name="sss"/>
-        <user name="hola"/>
-        <user name="JUAN"/>
+        <user name="Lolito"/>
+        <user name="loliyo79"/>
+        <user name="juanito12"/>
+        <user name="Manolo72"/>
     </usersOnline>
     <Rooms>
         <room name="SALA 1">
             <messages>
-                <message date="2021-10-10T13:34:02.398757400">
-                    <user name="Juan"/>
-                    <content>¿Queres algo?</content>
-                </message>
-                <message date="2021-10-10T13:34:02.401260400">
-                    <user name="Jose"/>
-                    <content>no</content>
-                </message>
-                <message date="2021-10-10T13:34:02.401260400">
-                    <user name="Juanitor"/>
-                    <content>yo si</content>
-                </message>
             </messages>
+            <users>
+                <usuario name="Juan"/>
+                <usuario name="Juanitor"/>
+                <usuario name="Rambo"/>
+            </users>
         </room>
         <room name="SALA 2">
             <messages>
-                <message date="2021-10-10T13:34:02.398757400">
+                <message date="2021-10-13T21:03:38.658541100">
                     <user name="Juan"/>
                     <content>¿Queres algo?</content>
                 </message>
-                <message date="2021-10-10T13:34:02.401260400">
+                <message date="2021-10-13T21:03:38.660541900">
                     <user name="Juanitor"/>
                     <content>yo si</content>
                 </message>
             </messages>
+            <users>
+                <usuario name="Juan"/>
+                <usuario name="Juanitor"/>
+                <usuario name="Rambo"/>
+            </users>
+        </room>
+        <room name="SALA 1">
+            <messages/>
+            <users/>
         </room>
     </Rooms>
 </CHAT>

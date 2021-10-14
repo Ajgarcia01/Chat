@@ -20,14 +20,15 @@ public class Room {
 	@XmlElementWrapper(name="messages")
 	@XmlElement(name="message")
 	protected List<Message> messages;
-	@XmlTransient
+	@XmlElementWrapper(name="users")
+	@XmlElement(name="usuario")
 	protected List<User>users;
 	
 	
 	public Room() {
 		this.name="";
 		this.messages = new ArrayList<>();
-		//this.users = new ArrayList<>();
+		this.users = new ArrayList<>();
 	}
 
 	public Room(String name, List<Message> messages, List<User> users) {

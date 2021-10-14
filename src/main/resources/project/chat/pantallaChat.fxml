@@ -78,7 +78,7 @@
                         <TextField fx:id="write" layoutX="3.0" layoutY="515.0" onAction="#writeMessage" prefHeight="25.0" prefWidth="315.0" promptText="WRITE THE MESSAGE" />
                         <Button fx:id="send" layoutX="333.0" layoutY="515.0" mnemonicParsing="false" onAction="#writeMessage" prefHeight="25.0" prefWidth="95.0" text="SEND" />
                         <TextField fx:id="chat" editable="false" layoutX="14.0" layoutY="51.0" prefHeight="456.0" prefWidth="396.0" />
-                        <TableView fx:id="tablamensages" layoutX="14.0" layoutY="51.0" prefHeight="455.0" prefWidth="395.0">
+                        <TableView fx:id="tablamensages" layoutX="14.0" layoutY="51.0" onSort="#tableMensajes" prefHeight="455.0" prefWidth="395.0">
                           <columns>
                             <TableColumn fx:id="usercolumn" prefWidth="90.0" text="USER" />
                             <TableColumn fx:id="datecolumn" prefWidth="93.0" text="DATE" />

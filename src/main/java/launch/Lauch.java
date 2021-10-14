@@ -6,6 +6,7 @@ import java.io.StringReader;
 
 import javax.xml.bind.JAXBException;
 
+import project.chat.Utils.Update;
 import project.chat.Utils.XMLManager;
 import project.chat.controller.RoomDAO;
 import project.chat.model.Message;
@@ -17,7 +18,10 @@ public class Lauch {
 
 	public static void main(String[] args) throws JAXBException, ClassNotFoundException, IOException {
 		// TODO Auto-generated method stub
-		LocalDateTimeAdapterTest();
+		Update up1=new Update();
+		up1.run();
+		ostia();
+		
 		/*
 		UserRoom ur=UserRoom.get_Instance();
 		System.out.println("Hola");
@@ -94,8 +98,8 @@ public class Lauch {
 	}
 	public static void LocalDateTimeAdapterTest() {
 		UserRoom ur=UserRoom.get_Instance();
-		Room r1=new Room("Sala1");
-		Room r2=new Room("Sala2");
+		Room r1=new Room("SALA 1");
+		Room r2=new Room("SALA 2");
 		User u=new User("Juan");
 		User u1=new User("Jose");
 		User u2=new User("Juanitor");
@@ -127,6 +131,11 @@ public class Lauch {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
-
+	public static void ostia() throws JAXBException {
+		System.out.println(XMLManager.unmarshalling("chat.xml"));
+	}
 }
+
+

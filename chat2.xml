@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<CHAT>
+    <usersOnline>
+        <user name="Lolito"/>
+        <user name="loliyo79"/>
+        <user name="juanito12"/>
+        <user name="Manolo72"/>
+    </usersOnline>
+    <Rooms>
+        <room name="SALA 1">
+            <messages>
+                <message date="2021-10-13T21:03:38.658541100">
+                    <user name="Juan"/>
+                    <content>¿Queres algo?</content>
+                </message>
+                <message date="2021-10-13T21:03:38.660541900">
+                    <user name="Jose"/>
+                    <content>no</content>
+                </message>
+                <message date="2021-10-13T21:03:38.660541900">
+                    <user name="Juanitor"/>
+                    <content>yo si</content>
+                </message>
+                <message date="2021-10-13T21:04:59.693249800">
+                    <user name="loliyo79"/>
+                    <content>hola</content>
+                </message>
+                <message date="2021-10-13T21:09:17.724062500">
+                    <user name="juanito12"/>
+                    <content>que pasa tios</content>
+                </message>
+                <message date="2021-10-13T21:36:59.598259200">
+                    <user name="Manolo72"/>
+                    <content>Que pasa tios</content>
+                </message>
+            </messages>
+            <users>
+                <usuario name="Juan"/>
+                <usuario name="Jose"/>
+                <usuario name="Juanitor"/>
+                <usuario name="Rambo"/>
+                <usuario name="loliyo79"/>
+                <usuario name="juanito12"/>
+                <usuario name="Manolo72"/>
+            </users>
+        </room>
+        <room name="SALA 2">
+            <messages>
+                <message date="2021-10-13T21:03:38.658541100">
+                    <user name="Juan"/>
+                    <content>¿Queres algo?</content>
+                </message>
+                <message date="2021-10-13T21:03:38.660541900">
+                    <user name="Juanitor"/>
+                    <content>yo si</content>
+                </message>
+            </messages>
+            <users>
+                <usuario name="Juan"/>
+                <usuario name="Juanitor"/>
+                <usuario name="Rambo"/>
+            </users>
+        </room>
+        <room name="SALA 1">
+            <messages/>
+            <users/>
+        </room>
+    </Rooms>
+</CHAT>
