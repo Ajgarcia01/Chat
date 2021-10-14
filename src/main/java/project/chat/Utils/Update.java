@@ -34,7 +34,7 @@ public class Update extends Thread {
 		    	List<User> userList=XMLManager.loadUsers("chat.xml");
 		    	 r1.validationUser(userList, UserDAO.getInstance());
 		    	 List<Room> messageList=XMLManager.loadRooms("chat.xml");
-		    	 	
+		    	 r1.validationMessages(messageList, UserDAO.getInstance());	
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
