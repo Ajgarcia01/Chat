@@ -2,18 +2,28 @@
 <CHAT>
     <usersOnline>
         <user name="Lolito"/>
-        <user name="loliyo79"/>
-        <user name="juanito12"/>
-        <user name="Manolo72"/>
+        <user name="pepe"/>
+        <user name="Miguelillo"/>
+        <user name="klk"/>
+        <user name="bb"/>
+        <user name="Hola1"/>
+        <user name="prueba3"/>
+        <user name="prueba4"/>
+        <user name="carlos"/>
+        <user name="Carlos22"/>
+        <user name="Manolito"/>
+        <user name="manolo721"/>
     </usersOnline>
     <Rooms>
         <room name="SALA 1">
             <messages>
+                <message date="2021-10-13T21:03:38.658541100">
+                    <user name="Juan"/>
+                    <content>¿Queres algo?</content>
+                </message>
             </messages>
             <users>
                 <usuario name="Juan"/>
-                <usuario name="Juanitor"/>
-                <usuario name="Rambo"/>
             </users>
         </room>
         <room name="SALA 2">
@@ -32,10 +42,6 @@
                 <usuario name="Juanitor"/>
                 <usuario name="Rambo"/>
             </users>
-        </room>
-        <room name="SALA 1">
-            <messages/>
-            <users/>
         </room>
     </Rooms>
 </CHAT>

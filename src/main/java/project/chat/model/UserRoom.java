@@ -11,6 +11,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import project.chat.controller.UserDAO;
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name="CHAT")
 
@@ -140,6 +142,16 @@ public class UserRoom {
 			}
 		}
 		return result;
+	}
+	
+	
+	//PARA VALIDAD A LA HORA DE REFRESCAR
+	public void validation(List<User>list,UserDAO udao) {
+		
+		if(!list.contains(udao)) {
+			list.add(udao);
+		}
+		this.users=list;
 	}
 	
 	

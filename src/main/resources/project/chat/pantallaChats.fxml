@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,11 +15,11 @@
             <Image url="@../../Imagenes/pantalla_chats.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="sala1" alignment="CENTER" layoutX="169.0" layoutY="92.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="82.0" prefWidth="125.0" text="SALA 1" textAlignment="CENTER" />
-      <Button fx:id="sala2" alignment="CENTER" layoutX="528.0" layoutY="110.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="70.0" prefWidth="125.0" text="SALA 2" textAlignment="CENTER" />
-      <Button fx:id="sala3" alignment="CENTER" layoutX="174.0" layoutY="271.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="91.0" prefWidth="118.0" text="SALA 3" textAlignment="CENTER" />
-      <Button fx:id="sala4" alignment="CENTER" layoutX="528.0" layoutY="271.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="82.0" prefWidth="125.0" text="SALA 4" textAlignment="CENTER" />
-      <Button fx:id="out" layoutX="677.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+      <Button fx:id="sala1" alignment="CENTER" layoutX="310.0" layoutY="72.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="57.0" prefWidth="82.0" text="SALA 1" textAlignment="CENTER" />
+      <Button fx:id="sala2" alignment="CENTER" layoutX="573.0" layoutY="72.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="50.0" prefWidth="82.0" text="SALA 2" textAlignment="CENTER" />
+      <Button fx:id="sala3" alignment="CENTER" layoutX="320.0" layoutY="265.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="50.0" prefWidth="82.0" text="SALA 3" textAlignment="CENTER" />
+      <Button fx:id="sala4" alignment="CENTER" layoutX="577.0" layoutY="266.0" mnemonicParsing="false" onAction="#setRoom" prefHeight="50.0" prefWidth="75.0" text="SALA 4" textAlignment="CENTER" />
+      <Button fx:id="out" layoutX="685.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="MOVE" />
          </cursor>
@@ -26,10 +27,12 @@
             <Font name="Franklin Gothic Heavy Italic" size="10.0" />
          </font>
       </Button>
-      <ImageView disable="true" fitHeight="40.0" fitWidth="44.0" layoutX="683.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="40.0" fitWidth="44.0" layoutX="693.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Imagenes/339-3396821_png-file-svg-download-icon-logout-transparent-png-removebg-preview.png" />
          </image>
       </ImageView>
+      <TextField fx:id="usernameset" alignment="CENTER" editable="false" layoutX="49.0" layoutY="225.0" prefHeight="40.0" prefWidth="149.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="292.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

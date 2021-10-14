@@ -12,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -36,6 +37,9 @@ public class SecondaryController {
 	@FXML
 	private Button sala4;
 	
+	@FXML
+	private TextField usernameset;
+	
 	
 	UserRoom ur;
 	UserDAO udao;
@@ -46,6 +50,7 @@ public class SecondaryController {
 	private void  initialize() throws ClassNotFoundException {
 		ur=UserRoom.get_Instance();
 		udao=UserDAO.getInstance();
+		usernameset.setText(udao.getName());
 	}
 	
 	
@@ -99,6 +104,7 @@ public class SecondaryController {
 	    Node source = (Node) event.getSource();
 	    Stage stage = (Stage) source.getScene().getWindow();
 	    stage.close();
+	    System.exit(0);
 	}
 	
 	private void salas(String sala) throws IOException {

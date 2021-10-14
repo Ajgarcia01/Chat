@@ -13,7 +13,7 @@
             <Image url="@../../Imagenes/pantalla_user.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="nickname" alignment="CENTER" layoutX="466.0" layoutY="221.0" onAction="#setName" prefHeight="38.0" prefWidth="171.0" promptText="USERNAME" />
-      <Button fx:id="getin" layoutX="481.0" layoutY="283.0" mnemonicParsing="false" onAction="#setName" prefHeight="38.0" prefWidth="142.0" text="GET IN" />
+      <TextField fx:id="nickname" alignment="CENTER" layoutX="400.0" layoutY="255.0" onAction="#setName" prefHeight="38.0" prefWidth="171.0" promptText="USERNAME" />
+      <Button fx:id="getin" layoutX="414.0" layoutY="307.0" mnemonicParsing="false" onAction="#setName" prefHeight="38.0" prefWidth="142.0" text="GET IN" />
    </children>
 </AnchorPane>

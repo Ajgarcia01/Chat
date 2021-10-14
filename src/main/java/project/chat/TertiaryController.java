@@ -103,16 +103,17 @@ public class TertiaryController {
 		rr.addUser(udao);
 		tableUsuarios();
 		tableMensajes();
-		up1.run();
+		up1.update();;
 		
 		//chat1.setText(ur.getUsers().toString());
 	}
 	
 	@FXML
-	private void exit(ActionEvent event) throws IOException {
-	    Node source = (Node) event.getSource();
+	private void exit(ActionEvent event) throws IOException, InterruptedException {
+		Node source = (Node) event.getSource();
 	    Stage stage = (Stage) source.getScene().getWindow();
 	    stage.close();
+	    
 	}
 	
 	@FXML
