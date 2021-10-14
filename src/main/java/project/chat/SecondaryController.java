@@ -100,10 +100,12 @@ public class SecondaryController {
     }
 	
 	@FXML
-	private void exit(ActionEvent event) throws IOException {
+	private void exit(ActionEvent event) throws IOException, JAXBException {
 	    Node source = (Node) event.getSource();
 	    Stage stage = (Stage) source.getScene().getWindow();
 	    stage.close();
+	    ur.removeUser(this.udao);
+	    XMLManager.marshal(ur,"chat.xml");
 	    System.exit(0);
 	}
 	
@@ -114,6 +116,7 @@ public class SecondaryController {
 			rr.setName(sala);
 			
 		}
+		rr.addUser(this.udao);
 		
 		try {
 			XMLManager.marshal(ur, new File("chat.xml"));

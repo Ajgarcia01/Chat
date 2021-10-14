@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <CHAT>
     <usersOnline>
-        <user name="Lolito"/>
-        <user name="pepe"/>
-        <user name="Miguelillo"/>
-        <user name="klk"/>
-        <user name="bb"/>
-        <user name="Hola1"/>
-        <user name="prueba3"/>
-        <user name="prueba4"/>
-        <user name="carlos"/>
-        <user name="Carlos22"/>
-        <user name="Manolito"/>
-        <user name="manolo721"/>
     </usersOnline>
     <Rooms>
         <room name="SALA 1">
@@ -21,9 +9,12 @@
                     <user name="Juan"/>
                     <content>¿Queres algo?</content>
                 </message>
+                <message date="2021-10-13T21:03:38.660541900">
+                    <user name="Jose"/>
+                    <content>no</content>
+                </message>
             </messages>
             <users>
-                <usuario name="Juan"/>
             </users>
         </room>
         <room name="SALA 2">
@@ -36,12 +27,24 @@
                     <user name="Juanitor"/>
                     <content>yo si</content>
                 </message>
+                <message date="2021-10-13T21:03:38.660541900">
+                    <user name="Juanitor"/>
+                    <content>hola</content>
+                </message>
+                <message date="2021-10-14T19:31:22.606471200">
+                    <user name="Prueba1"/>
+                    <content>Pepe hola que haces</content>
+                </message>
             </messages>
-            <users>
-                <usuario name="Juan"/>
-                <usuario name="Juanitor"/>
-                <usuario name="Rambo"/>
-            </users>
+            <users/>
+        </room>
+        <room name="SALA 3">
+            <messages/>
+            <users/>
+        </room>
+        <room name="SALA 4">
+            <messages/>
+            <users/>
         </room>
     </Rooms>
 </CHAT>

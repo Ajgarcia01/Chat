@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.xml.bind.JAXBException;
 
@@ -84,7 +86,6 @@ public class TertiaryController {
 	UserDAO udao;
 	Room rr;
 	String sala;
-	Update up1=new Update();
 	@FXML
 	private void  initialize() throws ClassNotFoundException, IOException, JAXBException {
 		ur=UserRoom.get_Instance();
@@ -101,30 +102,43 @@ public class TertiaryController {
 		}
 		XMLManager.marshal(ur, new File("chat.xml"));
 		rr.addUser(udao);
+		XMLManager.marshal(ur, new File("chat.xml"));
 		tableUsuarios();
 		tableMensajes();
-		up1.update();;
 		
 		//chat1.setText(ur.getUsers().toString());
 	}
 	
 	@FXML
-	private void exit(ActionEvent event) throws IOException, InterruptedException {
+	private void exit(ActionEvent event) throws IOException, InterruptedException, JAXBException {
 		Node source = (Node) event.getSource();
 	    Stage stage = (Stage) source.getScene().getWindow();
 	    stage.close();
+	    if(ur.searchRoom(sala).getName().equals("")){
+			rr=new Room(sala);
+			ur.addRoom(rr);
+		}else {
+			rr=ur.searchRoom(sala);
+			rr.removeUser(this.udao);
+			XMLManager.marshal(ur, "chat.xml");
+		}
+	    
 	    
 	}
 	
 	@FXML
-	private void writeMessage() throws IOException, JAXBException {
+	private void writeMessage() throws IOException, JAXBException, ClassNotFoundException {
 		rr.getName().concat(sala);
 		String mensaje=write.getText();
+		write.clear();
 		System.out.println(mensaje);
 		Message mg=new Message(udao, mensaje);
 		rr.addMessages(mg);
 		System.out.println(mg.toString());
 		XMLManager.marshal(ur, new File("chat.xml"));
+		tableMensajes();
+		
+		
 	   
 
 	}
@@ -148,7 +162,36 @@ public class TertiaryController {
 		usercolumn.setCellValueFactory(new PropertyValueFactory<Message,String>("user"));
 		datecolumn.setCellValueFactory(new PropertyValueFactory<Message,String>("date"));
 	}
-	
-	
+	/*
+	public void run() {
+		ur=UserRoom.get_Instance();
+		Timer timer = new Timer();
+		timer = new Timer();
 
+		TimerTask task = new TimerTask() {
+
+		    @Override
+		    public void run()
+		    {
+					try {
+						System.out.println("HOLA");
+						//XMLManager.marshal(ur,"chat.xml");
+						//ur.setUsers(XMLManager.loadUsers("chat.xml"));
+						//ur.setRooms(XMLManager.loadRooms("chat.xml"));
+						rr=ur.searchRoom(sala);
+						//XMLManager.marshal(ur,"chat.xml");
+						tableMensajes();
+						XMLManager.marshal(ur,"chat.xml");
+						XMLManager.unmarshalling("chat.xml");
+					} catch (JAXBException | IOException | ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			} 
+
+		    };
+		    // Empezamos dentro de 10ms y luego lanzamos la tarea cada 1000ms
+		timer.schedule(task, 10, 3000);
+	}
+*/
 }

@@ -19,10 +19,17 @@ import project.chat.model.UserRoom;
 
 public class Update extends Thread {
 	UserRoom r1;
-		 
-	public void update() {
+	Timer timer;
+	
+	public Update(){
 		r1=UserRoom.get_Instance();
-		Timer timer;
+		timer = new Timer();
+	}
+	
+	
+	public void run() {
+		r1=UserRoom.get_Instance();
+		Timer timer = new Timer();
 		timer = new Timer();
 
 		TimerTask task = new TimerTask() {
@@ -30,20 +37,23 @@ public class Update extends Thread {
 		    @Override
 		    public void run()
 		    {
-		    try {
-		    	List<User> userList=XMLManager.loadUsers("chat.xml");
-		    	 r1.validationUser(userList, UserDAO.getInstance());
-		    	 List<Room> messageList=XMLManager.loadRooms("chat.xml");
-		    	 r1.validationMessages(messageList, UserDAO.getInstance());	
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-
-		
 		    
-		   
+		    	
+		    	 
+					
+						try {
+							XMLManager.marshal(r1,"chat.xml");
+							XMLManager.unmarshalling("chat.xml");
+						} catch (JAXBException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+					
+		    
 		    		
 			System.out.println("HOLA");
 				
@@ -52,5 +62,6 @@ public class Update extends Thread {
 		    // Empezamos dentro de 10ms y luego lanzamos la tarea cada 1000ms
 		timer.schedule(task, 10, 1000);
 		}
+		
 }
 
