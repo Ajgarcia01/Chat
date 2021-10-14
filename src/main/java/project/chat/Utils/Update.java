@@ -12,36 +12,16 @@ import javafx.application.Platform;
 import project.chat.Utils.XMLManager;
 import project.chat.controller.RoomDAO;
 import project.chat.controller.UserDAO;
+import project.chat.model.Message;
+import project.chat.model.Room;
 import project.chat.model.User;
 import project.chat.model.UserRoom;
 
 public class Update extends Thread {
-	UserRoom r1=UserRoom.get_Instance();
-	
-	/* 
-	@Override
-	public void run() {
-	        refresqueshion();
-	    }
-	    public void refresqueshion() {
-	    Timer t = new Timer();
-	    t.schedule(new TimerTask() {
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	try {
-						XMLManager.unmarshalling("chat.xml");
-						System.out.println("HOLA");
-					} catch (JAXBException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-	            });
-	        }
-	    }, 0, 6000);
-	    }
-	  */  
+	UserRoom r1;
+		 
 	public void update() {
-		
+		r1=UserRoom.get_Instance();
 		Timer timer;
 		timer = new Timer();
 
@@ -50,9 +30,20 @@ public class Update extends Thread {
 		    @Override
 		    public void run()
 		    {
-		    List<User> lista=r1.getUsers();
+		    try {
+		    	List<User> userList=XMLManager.loadUsers("chat.xml");
+		    	 r1.validationUser(userList, UserDAO.getInstance());
+		    	 List<Room> messageList=XMLManager.loadRooms("chat.xml");
+		    	 	
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+
+		
 		    
-		    r1.validation(lista, UserDAO.getInstance());
+		   
 		    		
 			System.out.println("HOLA");
 				

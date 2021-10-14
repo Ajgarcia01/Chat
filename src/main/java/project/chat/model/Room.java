@@ -13,6 +13,8 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import project.chat.controller.UserDAO;
+
 @XmlAccessorType(XmlAccessType.NONE)
 public class Room {
 	@XmlAttribute(name="name")
@@ -110,6 +112,31 @@ public class Room {
 	        }
 	        return result;
 	    }
+	    
+	    
+	public List<Message> userMessage(UserDAO uDAO) {
+		List<Message> result=new ArrayList<>();
+			if(uDAO!=null) {
+				for (Message message : messages) {
+					if(message.getUser().equals(uDAO)) {
+						result.add(message);
+					}
+				}
+			}
+		
+		return result;
+	}
+	public void validationMessage(List<Message> xmlMessages,UserDAO uDAO) {
+		List<Message> userMessages=userMessage(uDAO);
+		if(xmlMessages!=null) {
+			for (Message message : userMessages) {
+				if(!xmlMessages.contains(message)) {
+					xmlMessages.add(message);
+				}
+			}	
+			messages=xmlMessages;
+		}		
+	}
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -127,6 +154,8 @@ public class Room {
 		}
 		return result;
 	}
+	
+	
 
 	@Override
 	public String toString() {

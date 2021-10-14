@@ -1,6 +1,7 @@
 package project.chat.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -146,13 +147,34 @@ public class UserRoom {
 	
 	
 	//PARA VALIDAD A LA HORA DE REFRESCAR
-	public void validation(List<User>list,UserDAO udao) {
-		
-		if(!list.contains(udao)) {
-			list.add(udao);
+	public void validationUser(List<User>list,UserDAO udao) {
+		if(list!=null&&udao!=null) {
+			if(!list.contains(udao)) {
+				list.add(udao);
+			}
+			this.users=list;
 		}
-		this.users=list;
+		
 	}
+	/*
+	 * Busca las salas que coincidan con las del UserRoom 
+	 * y comprueba que los mensajes coincidan y añada los que no esten 
+	 * posteriormente los carga en su sala respectiva
+	 */
+	public void validationMessages(List<Room>list,UserDAO udao) {
+		if(list!=null&&udao!=null) {
+			for (int i=0; i<this.rooms.size();i++) {
+				for (int j=0; j<list.size();j++) {
+					if(!rooms.contains(list.get(j))) {
+						rooms.add(list.get(j));
+					}else if(rooms.get(i).equals(list.get(j))) {
+						rooms.get(i).validationMessage(list.get(j).getMessages(), udao);
+					}
+				}				
+			}			
+		}		
+	}
+	
 	
 	
 	

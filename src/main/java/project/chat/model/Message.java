@@ -91,7 +91,7 @@ public class Message {
 			}
 			else if(obj instanceof Message) {
 				Message m=(Message)obj;
-				if(m.getMessage()==this.message) {
+				if(m.getDate().equals(this.date)&&m.getUser().equals(this.user)&&m.getMessage()==this.message) {
 					result=true;
 				}
 			}
